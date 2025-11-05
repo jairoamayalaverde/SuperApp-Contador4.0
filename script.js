@@ -475,11 +475,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById('exec-gemini').addEventListener('click', () => {
-    if (currentPromptText) {
-      const encoded = encodeURIComponent(currentPromptText);
-      window.open(`https://gemini.google.com/app?q=${encoded}`, '_blank');
-    }
-  });
+  if (currentPromptText) {
+    const encoded = encodeURIComponent(currentPromptText);
+    window.open(`https://gemini.google.com/app?q=${encoded}`, '_blank');
+  }
+});
 
   // Inicializar biblioteca
   applyFiltersAndSearch();
