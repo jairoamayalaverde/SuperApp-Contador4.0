@@ -651,7 +651,7 @@ export const promptsData = [
     ]
   }
 ];
-export { promptsData };
+export promptsData ;
 ```
 
 ---
