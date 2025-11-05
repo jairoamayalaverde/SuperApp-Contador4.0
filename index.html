@@ -16,43 +16,29 @@
     SÚPER-APP CONTADOR 4.0 - ESTILOS UNIFICADOS
     ========================================= */
 
-/* ---------- Variables de Color Unificadas ---------- */
 :root {
   --primary: #E86C2A;
   --primary-dark: #cf5d22;
   --secondary: #0A2342;
   --secondary-light: #1e3a5f;
-  
   --bg-light: #F8F9FA;
   --bg-white: #ffffff;
   --bg-code: #f9fafb;
-  
   --border-light: #E0E0E0;
   --border-medium: #d1d5db;
-  
   --text-dark: #111827;
   --text-medium: #374151;
   --text-light: #6b7280;
-  
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #dc2626;
-  
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* ---------- Reset Base ---------- */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
 body {
   font-family: "Lato", sans-serif;
   background: var(--bg-light);
@@ -61,7 +47,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ---------- Header ---------- */
 .site-header {
   background: var(--bg-white);
   border-bottom: 1px solid var(--border-light);
@@ -80,12 +65,7 @@ body {
   margin: 0 auto;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+.header-left { display: flex; align-items: center; gap: 10px; }
 .site-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -93,25 +73,10 @@ body {
   font-size: 1.4rem;
   margin: 0;
 }
+.site-title span { color: var(--primary); }
+.header-buttons { display: flex; align-items: center; gap: 10px; }
 
-.site-title span {
-  color: var(--primary);
-}
-
-.header-buttons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ---------- Botones Globales Unificados ---------- */
-.btn,
-.btn-add,
-.btn-secondary,
-.btn-primary,
-.btn-danger,
-.btn-export,
-button[type="submit"] {
+.btn, .btn-add, .btn-secondary, .btn-primary, .btn-danger, .btn-export, button[type="submit"] {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
@@ -124,15 +89,13 @@ button[type="submit"] {
   display: inline-block;
 }
 
-.btn-add,
-.btn-primary {
+.btn-add, .btn-primary {
   background: var(--primary);
   color: white;
   border: none;
 }
 
-.btn-add:hover,
-.btn-primary:hover {
+.btn-add:hover, .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
@@ -170,16 +133,13 @@ button[type="submit"] {
   border-color: var(--text-light);
 }
 
-.btn:disabled,
-.btn-primary:disabled,
-button:disabled {
+.btn:disabled, .btn-primary:disabled, button:disabled {
   background: var(--text-light);
   cursor: not-allowed;
   transform: none;
   opacity: 0.6;
 }
 
-/* ---------- Navegación de Pestañas ---------- */
 .tab-navigation {
   display: flex;
   gap: 8px;
@@ -216,24 +176,14 @@ button:disabled {
   background: transparent;
 }
 
-.tab-content {
-  display: none;
-}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
 
-.tab-content.active {
-  display: block;
-}
-
-/* ---------- Contenedor Principal ---------- */
 .app-container {
   max-width: 1100px;
   margin: 24px auto 40px;
   padding: 0 18px 36px;
 }
-
-/* ========================================= */
-/* SECCIÓN: GENERADOR EXPRESS (ASISTENTE)    */
-/* ========================================= */
 
 #contador4-pro-console {
   max-width: 800px;
@@ -273,8 +223,7 @@ button:disabled {
   font-size: 0.95rem;
 }
 
-#contador4-pro-console input[type='text'],
-#contador4-pro-console select {
+#contador4-pro-console input[type='text'], #contador4-pro-console select {
   width: 100%;
   padding: 12px 14px;
   border-radius: 8px;
@@ -287,8 +236,7 @@ button:disabled {
   transition: border-color 0.3s ease;
 }
 
-#contador4-pro-console input[type='text']:focus,
-#contador4-pro-console select:focus {
+#contador4-pro-console input[type='text']:focus, #contador4-pro-console select:focus {
   outline: none;
   border-color: var(--primary);
 }
@@ -329,9 +277,7 @@ button:disabled {
   color: #92400e;
 }
 
-.tip-box strong {
-  color: #78350f;
-}
+.tip-box strong { color: #78350f; }
 
 #dynamic-inputs-container {
   display: flex;
@@ -342,21 +288,14 @@ button:disabled {
   border-top: 2px dashed var(--border-medium);
 }
 
-.dynamic-input-group {
-  display: flex;
-  flex-direction: column;
-}
-
+.dynamic-input-group { display: flex; flex-direction: column; }
 .dynamic-input-group label {
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--secondary);
   margin-bottom: 6px;
 }
-
-.dynamic-input-group input {
-  margin-bottom: 0;
-}
+.dynamic-input-group input { margin-bottom: 0; }
 
 #contador4-pro-console button#generate-pro {
   width: 100%;
@@ -436,11 +375,7 @@ button:disabled {
   margin-bottom: 16px;
 }
 
-#output-console .output-loading { 
-  padding: 16px; 
-  color: var(--text-light);
-}
-
+#output-console .output-loading { padding: 16px; color: var(--text-light); }
 #output-console .output-error { 
   padding: 16px; 
   color: var(--danger); 
@@ -448,12 +383,7 @@ button:disabled {
   background: #fee2e2;
   border-left: 4px solid var(--danger);
 }
-
-#output-console .output-section { 
-  padding: 20px; 
-  white-space: pre-wrap;
-}
-
+#output-console .output-section { padding: 20px; white-space: pre-wrap; }
 #output-console .output-title {
   display: block;
   font-weight: 700;
@@ -461,7 +391,6 @@ button:disabled {
   color: var(--secondary);
   font-size: 1.05rem;
 }
-
 #output-console .output-content {
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9rem;
@@ -475,10 +404,6 @@ button:disabled {
   border: 1px solid var(--border-light);
 }
 
-/* ========================================= */
-/* SECCIÓN: MI BIBLIOTECA PERSONAL           */
-/* ========================================= */
-
 .controls {
   display: flex;
   gap: 16px;
@@ -488,10 +413,7 @@ button:disabled {
   margin-bottom: 20px;
 }
 
-.search-wrap {
-  flex: 1 1 420px;
-}
-
+.search-wrap { flex: 1 1 420px; }
 #searchInput {
   width: 100%;
   padding: 12px 16px;
@@ -507,13 +429,8 @@ button:disabled {
   border-color: var(--primary);
 }
 
-.actions-wrap {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
+.actions-wrap { display: flex; gap: 10px; align-items: center; }
 
-/* Filtros de Categoría */
 .filter-controls {
   display: flex;
   flex-wrap: wrap;
@@ -549,7 +466,6 @@ button:disabled {
   box-shadow: 0 4px 8px rgba(232, 108, 42, 0.3);
 }
 
-/* Lista de Prompts */
 .prompt-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -567,7 +483,6 @@ button:disabled {
   border: 2px dashed var(--border-medium);
 }
 
-/* Tarjetas de Prompts */
 .prompt-card {
   background: var(--bg-white);
   border: 2px solid var(--border-light);
@@ -585,10 +500,7 @@ button:disabled {
   border-color: var(--primary);
 }
 
-.prompt-card.fixed-prompt {
-  border-left: 5px solid var(--primary);
-}
-
+.prompt-card.fixed-prompt { border-left: 5px solid var(--primary); }
 .prompt-header {
   display: flex;
   justify-content: space-between;
@@ -666,10 +578,7 @@ button:disabled {
   border-color: #667eea;
 }
 
-.btn-action.primary:hover {
-  opacity: 0.9;
-}
-
+.btn-action.primary:hover { opacity: 0.9; }
 .btn-action.danger {
   color: var(--danger);
   border-color: #fecaca;
@@ -681,7 +590,6 @@ button:disabled {
   border-color: var(--danger);
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -717,11 +625,7 @@ button:disabled {
   opacity: 1;
 }
 
-.modal-overlay.active {
-  display: block;
-  opacity: 1;
-}
-
+.modal-overlay.active { display: block; opacity: 1; }
 .modal-content {
   padding: 32px;
   max-height: 90vh;
@@ -767,9 +671,7 @@ button:disabled {
   margin-bottom: 8px;
 }
 
-.modal-content input[type="text"],
-.modal-content textarea,
-.modal-content select {
+.modal-content input[type="text"], .modal-content textarea, .modal-content select {
   width: 100%;
   margin-top: 0;
   padding: 12px 14px;
@@ -781,9 +683,7 @@ button:disabled {
   transition: border-color 0.3s ease;
 }
 
-.modal-content input[type="text"]:focus,
-.modal-content textarea:focus,
-.modal-content select:focus {
+.modal-content input[type="text"]:focus, .modal-content textarea:focus, .modal-content select:focus {
   outline: none;
   border-color: var(--primary);
 }
@@ -794,9 +694,7 @@ button:disabled {
   line-height: 1.6;
 }
 
-.modal-content input:disabled,
-.modal-content textarea:disabled,
-.modal-content select:disabled {
+.modal-content input:disabled, .modal-content textarea:disabled, .modal-content select:disabled {
   background: var(--bg-light);
   color: var(--text-light);
   cursor: not-allowed;
@@ -824,7 +722,6 @@ button:disabled {
   border-color: var(--text-light);
 }
 
-/* Sección de Consejos */
 .tips-section {
   margin-top: 56px;
   padding-top: 40px;
@@ -876,7 +773,6 @@ button:disabled {
   margin: 0;
 }
 
-/* Footer */
 .app-footer {
   margin: 56px auto 24px;
   padding: 32px 16px;
@@ -888,10 +784,7 @@ button:disabled {
   line-height: 1.7;
 }
 
-.app-footer p {
-  margin: 0;
-}
-
+.app-footer p { margin: 0; }
 .app-footer a {
   color: var(--primary);
   font-weight: 700;
@@ -904,95 +797,28 @@ button:disabled {
   text-decoration: underline;
 }
 
-/* ========================================= */
-/* RESPONSIVE                                */
-/* ========================================= */
-
 @media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .site-title {
-    font-size: 1.15rem;
-    text-align: center;
-  }
-  
-  .header-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .btn-add,
-  .btn-secondary {
-    width: 100%;
-    text-align: center;
-  }
-
-  .tab-navigation {
-    padding: 0 12px;
-    gap: 4px;
-  }
-
-  .tab-btn {
-    font-size: 0.85rem;
-    padding: 12px 16px;
-  }
-
-  #contador4-pro-console {
-    padding: 20px;
-  }
-
-  #execution-btn-container {
-    grid-template-columns: 1fr;
-  }
-
-  .prompt-list {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-content {
-    padding: 24px;
-  }
-
-  .modal-actions {
-    flex-direction: column;
-  }
-
-  .modal-actions button {
-    width: 100%;
-  }
+  .header-inner { flex-direction: column; gap: 12px; }
+  .site-title { font-size: 1.15rem; text-align: center; }
+  .header-buttons { flex-direction: column; width: 100%; }
+  .btn-add, .btn-secondary { width: 100%; text-align: center; }
+  .tab-navigation { padding: 0 12px; gap: 4px; }
+  .tab-btn { font-size: 0.85rem; padding: 12px 16px; }
+  #contador4-pro-console { padding: 20px; }
+  #execution-btn-container { grid-template-columns: 1fr; }
+  .prompt-list { grid-template-columns: 1fr; }
+  .modal-content { padding: 24px; }
+  .modal-actions { flex-direction: column; }
+  .modal-actions button { width: 100%; }
 }
 
 @media (max-width: 600px) {
-  .app-container {
-    margin: 16px 12px 32px;
-    padding: 0 12px 24px;
-  }
-
-  .controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search-wrap,
-  .actions-wrap {
-    width: 100%;
-  }
-
-  .actions-wrap {
-    flex-direction: column;
-  }
-
-  .filter-controls {
-    gap: 8px;
-  }
-
-  .filter-btn {
-    font-size: 0.85rem;
-    padding: 8px 14px;
-  }
+  .app-container { margin: 16px 12px 32px; padding: 0 12px 24px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .search-wrap, .actions-wrap { width: 100%; }
+  .actions-wrap { flex-direction: column; }
+  .filter-controls { gap: 8px; }
+  .filter-btn { font-size: 0.85rem; padding: 8px 14px; }
 }
   </style>
 </head>
@@ -1010,7 +836,6 @@ button:disabled {
   </header>
 
   <main class="app-container">
-
     <nav class="tab-navigation">
       <button id="tab-generator" class="tab-btn active">🚀 Generador Express (115+ Prompts)</button>
       <button id="tab-library" class="tab-btn">📚 Mi Biblioteca Personal</button>
@@ -1028,12 +853,8 @@ button:disabled {
         <label for="task-pro">Prompt</label>
         <select id="task-pro"></select>
         <label for="prompt-template-preview">Plantilla del Prompt</label>
-        <div id="prompt-template-preview">
-          Selecciona una tarea para ver la plantilla...
-        </div>
-        <div class="tip-box">
-          💡 <strong>Tip:</strong> Rellena los campos que aparecen abajo para personalizar tu prompt.
-        </div>
+        <div id="prompt-template-preview">Selecciona una tarea para ver la plantilla...</div>
+        <div class="tip-box">💡 <strong>Tip:</strong> Rellena los campos que aparecen abajo para personalizar tu prompt.</div>
         <div id="dynamic-inputs-container"></div>
         <button id="generate-pro">Generar Prompt</button>
         <div id="output-console"></div>
@@ -1085,7 +906,6 @@ button:disabled {
         </div>
       </section>
     </section>
-    
   </main>
 
   <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
@@ -1125,11 +945,7 @@ button:disabled {
       <br>Todos los derechos reservados © 2025.
     </p>
   </footer>
-
-  <script>
-// [TODO EL JAVASCRIPT PERMANECE EXACTAMENTE IGUAL - NO CAMBIÉ NI UNA LÍNEA]
-// Solo copio el JavaScript completo aquí para mantener la funcionalidad...
-
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
   // ========================================================
@@ -1179,10 +995,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const sortedUserPrompts = userPrompts.sort((a, b) => b.createdAt - a.createdAt);
     return [...sortedUserPrompts, ...defaultPrompts];
   }
+  
   const truncate = (str, len) => {
     if (!str) return "";
     return str.length > len ? str.substring(0, len) + '...' : str;
   };
+  
   const capitalize = (str) => {
     if (!str) return "";
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -1328,6 +1146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showOverlay() {
     modalOverlay.classList.add("active");
   }
+  
   function hideOverlay() {
     modalOverlay.classList.remove("active");
   }
@@ -1394,10 +1213,242 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ========================================================
-  // === 2. LÓGICA DEL GENERADOR EXPRESS ====================
+  // === 2. LÓGICA DEL GENERADOR EXPRESS (CON TODAS LAS 6 CATEGORÍAS) ===
   // ========================================================
 
-  const promptsData = [{"title":"📊 Análisis Financiero Estratégico","icon":"📈","subcategories":[{"title":"Evaluación Financiera","prompts":[{"title":"Análisis Integral de Estados Financieros","prompt":"Actúa como un analista financiero senior. Analiza los estados financieros adjuntos (balance general, estado de resultados y estado de cambios en el patrimonio) de [nombre de la empresa/cliente] de los últimos [número de años] años. Identifica las [número] tendencias más significativas, evalúa la salud financiera general de la empresa, y proporciona [número] recomendaciones estratégicas basadas en tu análisis. Incluye comparaciones año a año y explica el impacto de cada hallazgo en la posición competitiva de la empresa."},{"title":"Análisis Comparativo","prompt":"Compara los estados financieros de esta empresa con los de sus [número] principales competidores en el sector [tipo de industria/sector]. Identifica fortalezas y debilidades relativas en términos de estructura de capital, eficiencia operativa y posición de liquidez. Proporciona un ranking de desempeño financiero y explica qué métricas clave determinan la posición de cada empresa en el mercado."},{"title":"Detección de Anomalías","prompt":"Examina estos estados financieros buscando inconsistencias, irregularidades o señales de alerta relacionadas con [tipo específico de análisis: reconocimiento de ingresos/valuación de inventario/uso de reservas]. Analiza la coherencia entre las diferentes partidas, identifica variaciones inusuais period-over-period, y evalúa la calidad de los earnings. Proporciona un informe de due diligence destacando cualquier área que requiera investigación adicional o aclaración por parte de la gerencia."}]},{"title":"Análisis de Flujo de Efectivo","prompts":[{"title":"Análisis de Sostenibilidad","prompt":"Analiza el estado de flujo de efectivo de los últimos [número de años] años, enfocándote en la sostenibilidad de la generación de efectivo. Evalúa la calidad del flujo operativo, identifica patrones estacionales, y determina si la empresa puede mantener sus operaciones, inversiones y pagos de dividendos sin financiamiento externo. Incluye proyecciones de flujo libre de efectivo para los próximos [número] años."},{"title":"Optimización de Capital de Trabajo","prompt":"Examina los componentes del flujo de efectivo operativo, particularmente los cambios en capital de trabajo. Identifica oportunidades de optimización en [área: cuentas por cobrar/inventarios/cuentas por pagar]. Calcula el ciclo de conversión de efectivo y proporciona [número] estrategias específicas para mejorar la generación de efectivo operativo sin comprometer las operaciones."},{"title":"Evaluación de Capacidad de Inversión","prompt":"Analiza la capacidad de la empresa para financiar proyectos de crecimiento basándote en su flujo de efectivo histórico y proyectado. Evalúa el equilibrio entre flujo operativo, necesidades de capex, servicio de deuda y distribuciones a accionistas. Determina el monto óptimo disponible para nuevas inversiones y recomienda una estructura de financiamiento para proyectos estratégicos de [monto/cantidad]."}]}]},{"title":"💼 Comunicación Empresarial de Alto Impacto","icon":"✉️","subcategories":[{"title":"Comunicaciones a Clientes","prompts":[{"title":"Comunicación de Cambios o Ajustes","prompt":"Redacta una carta profesional dirigida a nuestros clientes corporativos explicando [cambio específico: aumento de tarifas/modificación de servicios/nueva política]. La carta debe: mantener un tono empático y transparente, explicar las razones comerciales detrás de la decisión, destacar el valor agregado que continuamos proporcionando, incluir una línea de tiempo clara de implementación, y ofrecer un canal directo para consultas. Asegúrate de que el mensaje refuerce la relación a largo plazo y mitigue cualquier preocupación potencial."}]}]}];
+  const promptsData = [
+    {
+      "title": "📊 Análisis Financiero Estratégico",
+      "icon": "📈",
+      "subcategories": [
+        {
+          "title": "Evaluación Financiera",
+          "prompts": [
+            {
+              "title": "Análisis Integral de Estados Financieros",
+              "prompt": "Actúa como un analista financiero senior. Analiza los estados financieros adjuntos (balance general, estado de resultados y estado de cambios en el patrimonio) de [nombre de la empresa/cliente] de los últimos [número de años] años. Identifica las [número] tendencias más significativas, evalúa la salud financiera general de la empresa, y proporciona [número] recomendaciones estratégicas basadas en tu análisis. Incluye comparaciones año a año y explica el impacto de cada hallazgo en la posición competitiva de la empresa."
+            },
+            {
+              "title": "Análisis Comparativo",
+              "prompt": "Compara los estados financieros de esta empresa con los de sus [número] principales competidores en el sector [tipo de industria/sector]. Identifica fortalezas y debilidades relativas en términos de estructura de capital, eficiencia operativa y posición de liquidez. Proporciona un ranking de desempeño financiero y explica qué métricas clave determinan la posición de cada empresa en el mercado."
+            },
+            {
+              "title": "Detección de Anomalías",
+              "prompt": "Examina estos estados financieros buscando inconsistencias, irregularidades o señales de alerta relacionadas con [tipo específico de análisis: reconocimiento de ingresos/valuación de inventario/uso de reservas]. Analiza la coherencia entre las diferentes partidas, identifica variaciones inusuais period-over-period, y evalúa la calidad de los earnings. Proporciona un informe de due diligence destacando cualquier área que requiera investigación adicional o aclaración por parte de la gerencia."
+            }
+          ]
+        },
+        {
+          "title": "Análisis de Flujo de Efectivo",
+          "prompts": [
+            {
+              "title": "Análisis de Sostenibilidad",
+              "prompt": "Analiza el estado de flujo de efectivo de los últimos [número de años] años, enfocándote en la sostenibilidad de la generación de efectivo. Evalúa la calidad del flujo operativo, identifica patrones estacionales, y determina si la empresa puede mantener sus operaciones, inversiones y pagos de dividendos sin financiamiento externo. Incluye proyecciones de flujo libre de efectivo para los próximos [número] años."
+            },
+            {
+              "title": "Optimización de Capital de Trabajo",
+              "prompt": "Examina los componentes del flujo de efectivo operativo, particularmente los cambios en capital de trabajo. Identifica oportunidades de optimización en [área: cuentas por cobrar/inventarios/cuentas por pagar]. Calcula el ciclo de conversión de efectivo y proporciona [número] estrategias específicas para mejorar la generación de efectivo operativo sin comprometer las operaciones."
+            },
+            {
+              "title": "Evaluación de Capacidad de Inversión",
+              "prompt": "Analiza la capacidad de la empresa para financiar proyectos de crecimiento basándote en su flujo de efectivo histórico y proyectado. Evalúa el equilibrio entre flujo operativo, necesidades de capex, servicio de deuda y distribuciones a accionistas. Determina el monto óptimo disponible para nuevas inversiones y recomienda una estructura de financiamiento para proyectos estratégicos de [monto/cantidad]."
+            }
+          ]
+        },
+        {
+          "title": "Rentabilidad por Línea de Negocio",
+          "prompts": [
+            {
+              "title": "Análisis de Contribución Marginal",
+              "prompt": "Analiza la rentabilidad de cada línea de negocio calculando márgenes brutos, contribución marginal y EBITDA por segmento [nombre de la línea de negocio]. Identifica qué líneas están subsidiando a otras, evalúa la asignación de costos fijos, y determina el punto de equilibrio para cada unidad de negocio. Proporciona recomendaciones sobre qué líneas expandir, mantener o descontinuar."
+            },
+            {
+              "title": "Análisis de Valor Económico Agregado (EVA)",
+              "prompt": "Calcula el EVA para cada línea de negocio [nombre de la línea de negocio], considerando el costo de capital específico y los activos empleados. Identifica qué segmentos están creando o destruyendo valor, analiza los drivers de rentabilidad únicos de cada línea, y propone estrategias para maximizar el valor económico total de la empresa."
+            },
+            {
+              "title": "Optimización de Portfolio de Negocios",
+              "prompt": "Usando la matriz BCG y análisis de rentabilidad, evalúa el portfolio de líneas de negocio. Clasifica cada segmento según su posición competitiva y atractivo del mercado, analiza la sinergia entre líneas, y desarrolla una estrategia de asignación de recursos que maximice el retorno sobre el capital invertido a nivel corporativo en el sector [tipo de industria/sector]."
+            }
+          ]
+        },
+        {
+          "title": "Ratios y Métricas Financieras",
+          "prompts": [
+            {
+              "title": "Dashboard de Ratios Clave",
+              "prompt": "Crea un dashboard ejecutivo con los [número] ratios financieros más críticos organizados en [número] categorías: liquidez, eficiencia, apalancamiento, rentabilidad y mercado. Para cada ratio, proporciona el valor actual, tendencia de [número] años, benchmark del sector [tipo de industria/sector], y semáforo de alerta (verde/amarillo/rojo). Incluye interpretación ejecutiva y acciones recomendadas para ratios en zona de riesgo."
+            },
+            {
+              "title": "Análisis Predictivo con Ratios",
+              "prompt": "Utiliza los ratios financieros históricos para desarrollar un modelo predictivo de la salud financiera futura de [nombre de la empresa]. Identifica los ratios más correlacionados con el desempeño operativo, calcula z-scores de Altman y Piotroski F-Score, y proporciona una probabilidad de stress financiero en los próximos [período de tiempo variable: 12-24 meses]. Incluye escenarios de sensibilidad bajo un evento de [evento específico: aumento de tasas/recesión]."
+            },
+            {
+              "title": "Benchmarking Sectorial de Ratios",
+              "prompt": "Compara los ratios financieros de la empresa contra el percentil 25, mediana y percentil 75 de su sector industrial [tipo de industria/sector]. Identifica en qué métricas la empresa sobresale o queda rezagada, analiza las causas estructurales de las diferencias, y establece targets realistas de mejora para alcanzar el cuartil superior en [número] años."
+            }
+          ]
+        },
+        {
+          "title": "Gestión de Riesgos Financieros",
+          "prompts": [
+            {
+              "title": "Mapa de Riesgos Integral",
+              "prompt": "Desarrolla un mapa comprensivo de riesgos financieros evaluando: riesgo de liquidez, riesgo crediticio, riesgo de mercado, riesgo operacional y riesgo de concentración en [área específica]. Para cada categoría, identifica los [número] riesgos principales, evalúa probabilidad e impacto, y propone controles preventivos y planes de contingencia. Incluye métricas de early warning para cada tipo de riesgo."
+            },
+            {
+              "title": "Stress Testing Financiero",
+              "prompt": "Diseña y ejecuta stress tests bajo [número] escenarios: recesión moderada, crisis sectorial y shock de tasas de interés de [monto/cantidad] puntos base. Evalúa el impacto en liquidez, solvencia y rentabilidad, identifica puntos de quiebre críticos, y determina las acciones de contingencia necesarias. Calcula el capital de reserva requerido para mantener operaciones bajo cada escenario adverso."
+            },
+            {
+              "title": "Sistema de Alertas Tempranas",
+              "prompt": "Establece un sistema de alertas tempranas basado en indicadores financieros y operativos para [área/departamento]. Define umbrales críticos para ratios clave, identifica combinaciones de métricas que históricamente preceden problemas financieros, y crea un scoring de riesgo automatizado. Proporciona un protocolo de escalamiento y acciones correctivas para cada nivel de alerta del sistema."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "💼 Comunicación Empresarial de Alto Impacto",
+      "icon": "✉️",
+      "subcategories": [
+        {
+          "title": "Comunicaciones a Clientes",
+          "prompts": [
+            {
+              "title": "Comunicación de Cambios o Ajustes",
+              "prompt": "Redacta una carta profesional dirigida a nuestros clientes corporativos explicando [cambio específico: aumento de tarifas/modificación de servicios/nueva política]. La carta debe: mantener un tono empático y transparente, explicar las razones comerciales detrás de la decisión, destacar el valor agregado que continuamos proporcionando, incluir una línea de tiempo clara de implementación, y ofrecer un canal directo para consultas. Asegúrate de que el mensaje refuerce la relación a largo plazo y mitigue cualquier preocupación potencial."
+            },
+            {
+              "title": "Explicación de Resultados o Performance",
+              "prompt": "Elabora una comunicación personalizada para explicar a nuestro cliente [nombre del cliente] los resultados del proyecto/servicio realizado en el último período de [período de tiempo variable]. La carta debe incluir: un resumen ejecutivo de los logros clave, métricas de desempeño comparadas con objetivos iniciales, explicación de cualquier desviación o reto enfrentado, impacto tangible en su negocio, próximos pasos recomendados, y una invitación para una reunión de seguimiento. El tono debe ser profesional pero cercano, demostrando nuestro compromiso con su éxito."
+            },
+            {
+              "title": "Comunicación de Crisis o Incidentes",
+              "prompt": "Desarrolla una carta de comunicación de crisis para informar a los clientes afectados sobre [incidente específico: brecha de seguridad/interrupción de servicio/retiro de producto]. La comunicación debe seguir el protocolo: reconocimiento inmediato del problema, explicación clara de qué ocurrió y por qué, detalle de las acciones correctivas ya implementadas, medidas preventivas para evitar recurrencia, compensación o remediación ofrecida, y cronograma de seguimiento. El mensaje debe transmitir responsabilidad, transparencia y confianza en nuestra capacidad de resolución."
+            }
+          ]
+        },
+        {
+          "title": "Reportes Ejecutivos",
+          "prompts": [
+            {
+              "title": "Dashboard Ejecutivo Mensual",
+              "prompt": "Crea un reporte ejecutivo mensual personalizado para [nombre del ejecutivo/área] que incluya: resumen de [número] puntos clave del mes, dashboard visual con [número] KPIs críticos para su rol en el departamento de [nombre de área/departamento], análisis de tendencias vs. período anterior, identificación de [número] oportunidades inmediatas, alertas sobre riesgos emergentes, y recomendaciones accionables para los próximos [número] días. El formato debe ser conciso (máximo 2 páginas), visualmente atractivo, y enfocado en decisiones estratégicas que el ejecutivo debe tomar."
+            },
+            {
+              "title": "Reporte de Performance por Área",
+              "prompt": "Diseña un reporte ejecutivo trimestral personalizado para el Director de [área específica] que analice: performance vs. objetivos establecidos, comparación con benchmarks del sector [tipo de industria/sector], análisis de causas raíz de desviaciones, impacto en otros departamentos y la organización general, iniciativas en curso y su progreso, recomendaciones estratégicas para el siguiente trimestre. Incluye gráficos de tendencias, semáforos de alerta, y un plan de acción priorizado."
+            },
+            {
+              "title": "Reporte Estratégico de Junta Directiva",
+              "prompt": "Elabora un reporte ejecutivo para la Junta Directiva de [nombre de la empresa] que cubra: estado general del negocio con métricas financieras clave, avance en objetivos estratégicos anuais, análisis de mercado y posición competitiva en [tipo de industria/sector], principales riesgos y oportunidades identificados, decisiones críticas que requieren aprobación de la junta, y outlook para los próximos [período de tiempo variable]. El documento debe ser de nivel estratégico, incluir resumen ejecutivo de una página, y estar preparado para generar discusión y toma de decisiones en el board."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "📋 Propuestas y Cotizaciones que Cierran Negocios",
+      "icon": "💰",
+      "subcategories": [
+        {
+          "title": "Propuestas de Servicios",
+          "prompts": [
+            {
+              "title": "Propuesta Integral de Servicios Contables",
+              "prompt": "Desarrolla una propuesta comercial completa para ofrecer servicios contables integrales a [tipo de empresa/sector]. La propuesta debe incluir: análisis de las necesidades contables específicas del cliente, descripción detallada de servicios (contabilidad general, nómina, impuestos, reportes financieros), metodología de trabajo y cronograma de entregas, equipo asignado com perfiles profesionales, diferenciadores competitivos y valor agregado único, estructura de costos transparente com opciones de pago, garantías de calidad y SLAs, casos de éxito similares, y próximos pasos del proceso. El tono debe ser profesional, consultivo y enfocado en generar confianza."
+            },
+            {
+              "title": "Propuesta de Migración y Modernización Contable",
+              "prompt": "Elabora una propuesta especializada para la modernización del sistema contable de un cliente que actualmente maneja procesos manuales o sistemas obsoletos. Incluye: diagnóstico del estado actual y gaps identificados en [área específica: cuentas por pagar/activos fijos], propuesta de implementación de [software contable/ERP] moderno, plan de migración de datos históricos, capacitación del equipo interno del cliente, procesos optimizados y controles internos mejorados, cronograma de implementación por fases, análisis costo-beneficio de la modernización, soporte post-implementación, y métricas de éxito esperadas. Enfócate en el ROI y la eficiencia operativa."
+            }
+          ]
+        },
+        {
+          "title": "Cotizaciones y Precios",
+          "prompts": [
+            {
+              "title": "Cotización de Paquetes Diferenciados",
+              "prompt": "Crea una cotización estructurada en [número] paquetes de servicios (Básico, Profesional, Premium) para servicios contables, dirigida a [tipo de cliente: PYME/corporativo/startup]. Cada paquete debe incluir: descripción clara de servicios incluidos, frecuencia de entregas y reportes, nivel de soporte y atención, herramientas y tecnología incluida, precio [período de tiempo variable: mensual/anual] com descuentos por anualidad, tabla comparativa visual de características, opciones de add-ons disponibles, términos de contrato y condiciones de pago. Incluye recomendación del paquete más adecuado según el perfil del cliente y justificación del valor de cada tier."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "📈 Reportes y Dashboards Inteligentes",
+      "icon": "📊",
+      "subcategories": [
+        {
+          "title": "Sistemas de KPIs",
+          "prompts": [
+            {
+              "title": "Framework Integral de KPIs por Nivel Organizacional",
+              "prompt": "Diseña un sistema completo de KPIs financieros estructurado en [número] niveles: estratégico (C-level), táctico (gerencias medias) y operativo (supervisión). Para cada nivel define: [número] KPIs principais com sus fórmulas específicas, frecuencia de medición y reporte, umbrales de alerta (verde/amarillo/rojo), benchmarks del sector [tipo de industria/sector] cuando aplique, interrelación entre KPIs de diferentes niveles, dashboard visual correspondiente, y responsable de cada métrica en [nombre de área/departamento]. Incluye KPIs de rentabilidad, liquidez, eficiencia, crecimiento y riesgo. El framework debe permitir cascadeo desde objetivos estratégicos hasta métricas operativas diarias."
+            }
+          ]
+        },
+        {
+          "title": "Reportes Automatizados",
+          "prompts": [
+            {
+              "title": "Sistema de Reportes Automáticos Multi-periodicidad",
+              "prompt": "Diseña una arquitectura de reportes automatizados que genere: reportes diarios de cash flow y posición financiera, reportes semanales de performance vs. budget, reportes mensuales de P&L completo y análisis de variaciones, reportes trimestrales de tendencias y análisis predictivo, reportes anuais de cierre com comparativos históricos. Para cada reporte especifica: fuentes de datos automáticas (ERP, CRM, etc.), algoritmos de consolidación, validações de calidad de datos, formato de presentación, lista de distribución automática en [nombre de área/departamento], triggers para reportes especiales por excepción, y proceso de escalamiento para anomalías detectadas."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "⚖️ Cumplimiento Fiscal Proactivo",
+      "icon": "📋",
+      "subcategories": [
+        {
+          "title": "Calendarios Fiscales",
+          "prompts": [
+            {
+              "title": "Calendario Fiscal Integral Automatizado",
+              "prompt": "Desarrolla un calendario fiscal completo que incluya todas las obrigações tributarias nacionais, regionales y municipales aplicables a [tipo de empresa/sector], organizando: fechas de vencimiento mensuais, bimestrales, trimestrales y anuais, obrigações diferenciadas por régimen tributario (común, simplificado, especial), alertas automáticas com [número] días de anticipación, categorización por tipo de impuesto (renta, IVA, industria y comercio, retenções, parafiscales), indicación de formularios y anexos requeridos, valor estimado de cada obligación, responsable interno asignado en [nombre de área/departamento], y status de cumplimiento. Incluye funcionalidad para actualización automática por cambios normativos y sincronización com sistema contable."
+            }
+          ]
+        },
+        {
+          "title": "Análisis de Cambios Normativos",
+          "prompts": [
+            {
+              "title": "Análisis Integral de Reforma Tributaria",
+              "prompt": "Desarrolla un análisis comprehensivo de [nova reforma tributaria/cambio normativo] que incluya: resumen ejecutivo de los cambios más relevantes para nuestro tipo de empresa [tipo de empresa/sector], comparativo detallado entre normativa anterior vs. nova, análisis cuantitativo del impacto en carga tributaria anual, identificación de novas obrigações y fechas de implementación, oportunidades de planificación fiscal emergentes, riscos de cumplimiento y áreas de incertidumbre jurídica, recomendações de ações inmediatas vs. mediano plazo, análisis de precedentes administrativos y doctrinarios disponibles, cronograma de implementación por fases, y estrategia de comunicación a stakeholders internos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "🔍 Auditoría y Control Robusto",
+      "icon": "🔎",
+      "subcategories": [
+        {
+          "title": "Programas de Auditoría",
+          "prompts": [
+            {
+              "title": "Diseño de Programa Integral de Auditoría",
+              "prompt": "Actúa como auditor senior certificado (CIA/CPA) com experiencia en [sector específico]. Diseña un programa de auditoría integral para evaluar [proceso/área específica] que incluya: (a) Análisis detallado del entorno regulatorio aplicable (normas locais, internacionais, sectoriais), (b) Matriz de riscos estratificada por probabilidad e impacto com metodología cualitativa y cuantitativa, (c) Objetivos específicos SMART alineados com el apetito de risco organizacional, (d) Procedimientos sustantivos y de cumplimiento com técnicas de muestreo estadístico (MUS, estratificado, sistemático), (e) Cronograma detallado com hitos críticos y dependencias, (f) Asignación de recursos humanos por nivel de experiencia y especialización, (g) Presupuesto detallado com análisis de sensibilidad (estimado de [monto/cantidad]), (h) Metodología de documentación según estándares internacionais (IIA, AICPA), (i) Indicadores de calidad y efectividad del programa, (j) Plan de contingencia para riscos identificados durante la ejecución."
+            }
+          ]
+        },
+        {
+          "title": "Evaluación de Controles",
+          "prompts": [
+            {
+              "title": "Evaluación COSO Avanzada",
+              "prompt": "Conduce una evaluación exhaustiva del sistema de control interno aplicando COSO 2013 com enfoque en los 17 principios fundamentales para [área/departamento]. Para cada componente: Ambiente de Control: (a) Evaluación de tone at the top mediante análisis de comunicações ejecutivas, decisões éticas documentadas y cultura organizacional, (b) Assessment de estructura organizacional, líneas de reporte y accountability framework, (c) Revisión de políticas de RRHH, competencias profissionais y evaluación de desempeño, Evaluación de Riesgos: (d) Análisis de proceso de identificación de riscos (talleres, entrevistas, análisis de escenarios), (e) Evaluación de metodología de assessment de riscos com matrices probabilidad/impacto calibradas, (f) Revisión de proceso de respuesta al risco y definición de tolerancia, Atividades de Control: (g) Evaluación de controles preventivos, detectivos y compensatorios com testing de efectividad operativa, (h) Análisis de segregación de funciones en [proceso específico] y controles de autorización, (i) Revisión de controles sobre procesamiento de información y reportes financeiros, Información y Comunicación: (j) Assessment de calidad y relevancia de información para toma de decisões, (k) Evaluación de efectividad de canales de comunicación internos y externos, Monitoreo: (l) Revisión de atividades de monitoreo continuo y avaliações separadas, (m) Assessment de proceso de reporte de deficiencias y seguimiento de ações correctivas."
+            }
+          ]
+        }
+      ]
+    }
+  ];
 
   // ========================================================
   // === 3. LÓGICA DE NAVEGACIÓN DE PESTAÑAS ================
