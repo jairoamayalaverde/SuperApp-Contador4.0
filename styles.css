@@ -1,10 +1,12 @@
 /* =========================================
-    SÚPER APP CONTADOR 4.0 (FUSIONADA)
-    CSS Base + Biblioteca + Asistente + Pestañas
-   ========================================= */
+    SÚPER-APP CONTADOR 4.0 - STYLES.CSS
+    CONTIENE:
+    1. Estilos Base (Biblioteca)
+    2. Estilos de Pestañas (NUEVO)
+    3. Estilos del Generador (Asistente)
+    ========================================= */
 
-/* ---------- Fuentes ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Poppins:wght@700;900&display=swap');
+/* --- 1. ESTILOS BASE (BIBLIOTECA) --- */
 
 /* ---------- Variables ---------- */
 :root {
@@ -33,10 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* ===============================
-    1. HEADER (Compartido)
-=============================== */
+/* Header */
 .site-header {
   background: #fff;
   border-bottom: 1px solid #eee;
@@ -79,11 +78,8 @@ body {
   gap: 10px;
 }
 
-/* Botones genéricos (usados en header y otros) */
 .btn-add,
-.btn-secondary,
-.btn-primary,
-.btn-danger {
+.btn-secondary {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
@@ -92,7 +88,6 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-  text-decoration: none;
 }
 
 .btn-add {
@@ -103,6 +98,7 @@ body {
   background: #cf5d22;
   transform: translateY(-1px);
 }
+
 .btn-secondary {
   background: transparent;
   border: 2px solid #E86C2A;
@@ -113,258 +109,36 @@ body {
   color: #fff;
 }
 
-/* ===============================
-    2. NAVEGACIÓN DE PESTAÑAS (Nuevo)
-=============================== */
-.tab-navigation {
-    display: flex;
-    gap: 10px;
-    margin: 24px 0;
-    border-bottom: 2px solid var(--gris-medio);
-}
-.tab-btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 12px 20px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    color: #555;
-    border-bottom: 3px solid transparent;
-    transform: translateY(2px);
-    transition: all 0.2s ease;
-}
-.tab-btn:hover {
-    color: #000;
-    background: #f4f4f4;
-}
-.tab-btn.active {
-    color: var(--naranja);
-    border-bottom-color: var(--naranja);
+/* Móvil Header */
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .site-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .header-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-add,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
-/* Lógica de visibilidad de pestañas */
-.tab-content {
-    display: none;
-}
-.tab-content.active {
-    display: block;
-}
-
-
-/* ===============================
-    3. ESTILOS DEL ASISTENTE (Generador)
-=============================== */
-#contador4-pro-console {
-  max-width: 720px;
-  margin: 0 auto; /* Centrado dentro de su pestaña */
-  padding: 24px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #ffffff;
-}
-#contador4-pro-console .console-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-#contador4-pro-console h3 {
-  text-align: center;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  color: var(--azul);
-}
-#contador4-pro-console label {
-  display: block;
-  font-weight: 700;
-  margin-top: 12px;
-  margin-bottom: 6px;
-  color: var(--azul);
-}
-#contador4-pro-console input[type='text'],
-#contador4-pro-console select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  margin-bottom: 12px;
-  background: #fff;
-  font-family: 'Lato', Arial, Helvetica, sans-serif;
-  font-size: 1em;
-}
-#prompt-template-preview {
-  width: 100%;
-  min-height: 100px;
-  max-height: 250px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  margin-bottom: 12px;
-  background: #f9fafb;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.95em;
-  color: #374151;
-  overflow-y: auto;
-  white-space: pre-wrap;
-}
-#prompt-template-preview .bracket-content {
-  font-weight: 700;
-  color: #2563eb;
-  background-color: #eff6ff;
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-.tip-box {
-  background: #fef3c7;
-  border-left: 4px solid #f59e0b;
-  padding: 12px 15px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  color: #92400e;
-}
-.tip-box strong {
-  color: #78350f;
-}
-#dynamic-inputs-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 15px 0;
-  padding-top: 15px;
-  border-top: 1px dashed #d1d5db;
-}
-.dynamic-input-group {
-  display: flex;
-  flex-direction: column;
-}
-.dynamic-input-group label {
-  font-weight: 700;
-  font-size: 0.9em;
-  color: #374151;
-  margin-top: 0;
-  margin-bottom: 4px;
-}
-.dynamic-input-group input {
-  font-size: 1em;
-  margin-bottom: 0;
-}
-#contador4-pro-console button#generate-pro {
-  width: 100%;
-  padding: 12px;
-  background: #111827;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1em;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  margin-bottom: 12px;
-  transition: background 0.2s;
-}
-#contador4-pro-console button#generate-pro:hover {
-  background: #374151;
-}
-#contador4-pro-console button#generate-pro:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
-}
-#contador4-pro-console button#copy-pro {
-  width: 100%;
-  padding: 10px;
-  background: #e0e7ff;
-  color: #1d4ed8;
-  border: 1px solid #c7d2fe;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 0.95em;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  margin-bottom: 12px;
-  transition: all 0.2s;
-}
-#contador4-pro-console button#copy-pro:hover {
-  background: #c7d2fe;
-}
-#contador4-pro-console button#copy-pro:disabled {
-  background: #e5e7eb;
-  color: #9ca3af;
-  border-color: #d1d5db;
-  cursor: not-allowed;
-}
-#execution-btn-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-.exec-btn {
-  padding: 10px 12px;
-  background: #374151;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9em;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  transition: background 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-.exec-btn:hover {
-  background: #4b5563;
-}
-.exec-btn:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
-}
-#output-console {
-  min-height: 120px;
-  border-radius: 10px;
-  background: #f9fafb;
-  border: 1px solid #e6eef5;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-#output-console .output-loading { padding: 14px; color: #6b7280; }
-#output-console .output-error { padding: 14px; color: #b91c1c; font-weight: 700; }
-#output-console .output-section { padding: 14px; white-space: pre-wrap; }
-#output-console .output-title {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #111827;
-}
-#output-console .output-content {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.95em;
-  color: #374151;
-  -webkit-user-select: text;
-  user-select: text;
-}
-
-
-/* ===============================
-    4. ESTILOS DE LA BIBLIOTECA
-=============================== */
-
-/* ========== MAIN (space below header) ========== */
+/* Contenedor Principal */
 .app-container {
-  max-width: 1200px; /* Ajustado para Súper-App */
-  margin: 0 auto 40px; /* Reducido margen superior */
+  max-width: 1100px;
+  margin: 24px auto 40px;
   padding: 0 18px 36px;
 }
 
-/* ========== Controles (search + export) ========== */
+/* Controles (search + export) */
 .controls {
   display: flex;
   gap: 16px;
@@ -372,7 +146,6 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 18px;
-  padding-top: 24px; /* Espacio superior para la pestaña */
 }
 
 .search-wrap {
@@ -387,12 +160,12 @@ body {
   font-size: 0.95rem;
 }
 
-/* actions */
 .actions-wrap {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
 .btn {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -413,7 +186,7 @@ body {
     border-color: #bbb;
 }
 
-/* ========== Filtros de Categoría ========== */
+/* Filtros de Categoría */
 .filter-controls {
     display: flex;
     flex-wrap: wrap;
@@ -422,6 +195,7 @@ body {
     padding-bottom: 16px;
     border-bottom: 1px solid var(--gris-medio);
 }
+
 .filter-btn {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -445,12 +219,14 @@ body {
     box-shadow: 0 2px 6px rgba(232, 108, 42, 0.3);
 }
 
-/* ========== Lista de Prompts (Tarjetas) ========== */
+
+/* Lista de Prompts */
 .prompt-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+
 .prompt-empty-message {
     grid-column: 1 / -1;
     text-align: center;
@@ -462,7 +238,8 @@ body {
     border: 1px dashed var(--gris-medio);
 }
 
-/* ========== Tarjeta Avanzada (V2) ========== */
+
+/* Tarjeta Avanzada (V2) */
 .prompt-card {
   background: white;
   border: 1px solid #e5e7eb;
@@ -560,7 +337,8 @@ body {
   background: #fee2e2;
 }
 
-/* ========== Modal & overlay (Compartido) ========== */
+
+/* Modal & overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -661,16 +439,19 @@ body {
   border-top: 1px solid #f0f0f0;
   padding-top: 20px;
 }
+.btn-primary,
+.btn-danger {
+    color: #fff;
+    border: none;
+}
 .btn-primary {
     background: var(--naranja);
-    color: #fff;
 }
 .btn-primary:hover {
     background: #cf5d22;
 }
 .btn-danger {
     background: #dc2626;
-    color: #fff;
 }
 .btn-danger:hover {
     background: #b91c1c;
@@ -684,7 +465,8 @@ body {
     background: #f4f4f4;
 }
 
-/* ========== Sección de Consejos ========== */
+
+/* Sección de Consejos */
 .tips-section {
     margin-top: 48px;
     padding-top: 32px;
@@ -725,7 +507,8 @@ body {
     margin: 0;
 }
 
-/* ========== Footer (Compartido) ========== */
+
+/* Footer */
 .app-footer {
   margin: 40px auto 24px;
   padding: 24px 12px;
@@ -748,51 +531,13 @@ body {
     text-decoration: underline;
 }
 
-/* ========== Responsive General ========== */
-@media (max-width: 700px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 12px; /* Aumentado para móvil */
-  }
-  .site-title {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  .header-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 8px;
-  }
-  .btn-add,
-  .btn-secondary {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-  .tab-navigation {
-    gap: 5px;
-  }
-  .tab-btn {
-    font-size: 0.85rem;
-    padding: 10px 8px;
-  }
+/* Responsive General */
+@media (max-width: 600px) {
   .app-container {
     margin: 12px 12px 28px;
     padding: 0 12px 24px;
   }
-  #contador4-pro-console {
-    padding: 16px;
-  }
-  .controls {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .actions-wrap {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .prompt-list, .tips-grid {
+  .prompt-list {
     grid-template-columns: 1fr;
   }
   .modal {
@@ -803,7 +548,272 @@ body {
     font-size: 0.95rem;
     padding: 10px 12px;
   }
+}
+
+/* =========================================
+   2. (NUEVO) ESTILOS DE PESTAÑAS
+   ========================================= */
+.app-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--gris-medio);
+  margin-bottom: 24px;
+}
+
+.nav-tab {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  margin-bottom: -1px; /* Solapa el borde inferior */
+}
+.nav-tab:hover {
+  color: #000;
+  background: #f4f4f4;
+}
+.nav-tab.active {
+  color: var(--naranja);
+  border-bottom-color: var(--naranja);
+}
+
+.app-view {
+  display: none; /* Oculto por defecto */
+}
+.app-view.active-view {
+  display: block; /* Visible */
+}
+
+/* Ocultar botón "+ Nuevo Prompt" cuando el Generador está activo */
+body[data-active-view="generator-view"] #addPromptBtn {
+  display: none;
+}
+/* Ocultar "Ver en Sheets" y "Exportar" cuando el Generador está activo */
+body[data-active-view="generator-view"] #viewSheetBtn,
+body[data-active-view="generator-view"] #exportBtn {
+  display: none;
+}
+
+
+/* =========================================
+   3. (NUEVO) ESTILOS DEL GENERADOR (ASISTENTE)
+   ========================================= */
+
+#contador4-pro-console {
+  max-width: 720px;
+  margin: 18px auto;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  background: #ffffff;
+}
+#contador4-pro-console .console-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#contador4-pro-console h3 {
+  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #111827; /* Añadido para consistencia */
+}
+
+#contador4-pro-console label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #374151; /* Añadido para consistencia */
+}
+
+#contador4-pro-console input[type='text'],
+#contador4-pro-console select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 12px;
+  background: #fff;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+#prompt-template-preview {
+  width: 100%;
+  min-height: 100px;
+  max-height: 250px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 12px;
+  background: #f9fafb;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95em;
+  color: #374151;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+#prompt-template-preview .bracket-content {
+  font-weight: 700;
+  color: #2563eb;
+  background-color: #eff6ff;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.tip-box {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  color: #92400e;
+}
+.tip-box strong {
+  color: #78350f;
+}
+
+#dynamic-inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #d1d5db;
+}
+.dynamic-input-group {
+  display: flex;
+  flex-direction: column;
+}
+.dynamic-input-group label {
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #374151;
+  margin-bottom: 4px;
+}
+.dynamic-input-group input {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+#contador4-pro-console button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+#contador4-pro-console button#generate-pro {
+  width: 100%;
+  padding: 12px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 12px;
+  transition: background 0.2s;
+}
+#contador4-pro-console button#generate-pro:hover {
+  background: #374151;
+}
+#contador4-pro-console button#generate-pro:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+#contador4-pro-console button#copy-pro {
+  width: 100%;
+  padding: 10px;
+  background: #e0e7ff;
+  color: #1d4ed8;
+  border: 1px solid #c7d2fe;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+#contador4-pro-console button#copy-pro:hover {
+  background: #c7d2fe;
+}
+#contador4-pro-console button#copy-pro:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+#execution-btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.exec-btn {
+  padding: 10px 12px;
+  background: #374151; /* Gris oscuro */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 700;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.exec-btn:hover {
+  background: #4b5563; /* Un poco más claro al pasar el mouse */
+}
+.exec-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
   #execution-btn-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una columna en móviles */
   }
+}
+
+/* Estilos del Output */
+#output-console {
+  min-height: 120px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e6eef5;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+#output-console .output-loading { padding: 14px; color: #6b7280; }
+#output-console .output-error { padding: 14px; color: #b91c1c; font-weight: 700; }
+#output-console .output-section { padding: 14px; white-space: pre-wrap; }
+#output-console .output-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+#output-console .output-content {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95em;
+  color: #374151;
+  -webkit-user-select: text;
+  user-select: text;
 }
