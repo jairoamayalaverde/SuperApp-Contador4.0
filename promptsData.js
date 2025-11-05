@@ -651,4 +651,25 @@ export const promptsData = [
     ]
   }
 ];
+export { promptsData };
+```
 
+---
+
+## 🧪 **Para probar si funciona:**
+
+1. Abre la **consola del navegador** (F12)
+2. ¿Ves algún error rojo?
+3. Si dice algo como:
+   - `"The requested module does not provide an export named 'promptsData'"` → Usa la Opción 1
+   - `"Failed to load module script"` → Revisa que los archivos estén en la misma carpeta
+
+---
+
+## 📁 **Asegúrate de que la estructura sea:**
+```
+📁 tu-proyecto/
+├── index.html
+├── style.css
+├── script.js
+└── promptsData.js
