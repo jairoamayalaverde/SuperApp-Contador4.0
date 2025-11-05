@@ -820,15 +820,10 @@ body {
 
 ---
 
-## 3️⃣ Confirma que tu **script.js** ya tiene todo
-
-Tu archivo `script.js` que ya tienes debe contener TODO el JavaScript original incluyendo el `promptsData` completo con las 6 categorías.
-
----
-
-## ✅ **RESULTADO FINAL:**
+## ✅ **Tu estructura final debe quedar:**
 ```
 📁 tu-proyecto/
-├── index.html   ← Solo 175 líneas (limpio)
-├── style.css    ← 634 líneas (todos los estilos)
-└── script.js    ← ~2000 líneas (toda la lógica + 6 categorías)
+├── index.html        ✅
+├── style.css         ✅ (acabas de crear)
+├── script.js         ✅
+└── promptsData.js    ✅
