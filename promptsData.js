@@ -1,6 +1,5 @@
-// src/promptsData.js
-// ✅ VERSIÓN COMPLETA ANIDADA (7 CATEGORÍAS) CON TEMPLATE LITERALS (BACKTICKS) Y VARIABLES [ ]
-const promptsData = [
+// promptsData.js
+export const promptsData = [
   // 1️⃣ ANÁLISIS FINANCIERO ESTRATÉGICO
   {
     title: "📊 Análisis Financiero Estratégico",
@@ -653,4 +652,3 @@ const promptsData = [
   }
 ];
 
-export default promptsData;
