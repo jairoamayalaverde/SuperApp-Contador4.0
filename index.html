@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HUB Contador 4.0 - Biblioteca y Asistente</title>
+
+  <link rel="icon" href="Favicon-app.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="Favicon-app.png" />
+  <meta name="theme-color" content="#E86C2A">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <h1 class="site-title">Ecosistema IA – <span>Contador 4.0</span></h1>
+      </div>
+
+      <div class="header-buttons">
+        <button id="viewSheetBtn" class="btn-secondary">Ver o editar en Google Sheets</button>
+        </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <nav class="tab-navigation">
+      <button id="tab-generator" class="tab-btn active">🚀 Generador Express (115+ Prompts)</button>
+      <button id="tab-library" class="tab-btn">📚 Mi Biblioteca Personal</button>
+    </nav>
+
+    <section id="assistant-view" class="tab-content active">
+      <div id="contador4-pro-console">
+        <div class="console-header">
+          <h3>🚀 Asistente Contador 4.0</h3>
+        </div>
+        <label for="cat-pro">Categoría</label>
+        <select id="cat-pro"></select>
+        <label for="subcat-pro">Subcategoría</label>
+        <select id="subcat-pro"></select>
+        <label for="task-pro">Prompt</label>
+        <select id="task-pro"></select>
+        <label for="prompt-template-preview">Plantilla del Prompt</label>
+        <div id="prompt-template-preview">
+          Selecciona una tarea para ver la plantilla...
+        </div>
+        <div class="tip-box">
+          💡 <strong>Tip:</strong> Rellena los campos que aparecen abajo para personalizar tu prompt.
+        </div>
+        <div id="dynamic-inputs-container"></div>
+        <button id="generate-pro">Generar Prompt</button>
+        <div id="output-console"></div>
+        <button id="copy-pro" style="display: none;">Copiar Prompt</button>
+        <div id="execution-btn-container" style="display: none;">
+          <button id="exec-claude" class="exec-btn">🤓 Ejecutar en Claude</button>
+          <button id="exec-chatgpt" class="exec-btn">💬 Ejecutar en ChatGPT</button>
+          <button id="exec-gemini" class="exec-btn">✨ Ejecutar en Gemini</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="library-view" class="tab-content">
+      <section class="controls">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Buscar en Mi Biblioteca..." />
+        </div>
+        <div class="actions-wrap">
+          <button id="addPromptBtn" class="btn-add">+ Nuevo Prompt</button>
+          <button id="exportBtn" class="btn btn-export">📤 Exportar Excel</button>
+        </div>
+      </section>
+
+      <nav id="filterControls" class="filter-controls">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="diario">Diario</button>
+        <button class="filter-btn" data-filter="semanal">Semanal</button>
+        <button class="filter-btn" data-filter="mensual">Mensual</button>
+        <button class="filter-btn" data-filter="ocasional">Ocasional</button>
+      </nav>
+
+      <section id="promptList" class="prompt-list" aria-live="polite"></section>
+
+      <section class="tips-section">
+        <h2>Consejos para tu Biblioteca</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h3>Personaliza Siempre</h3>
+            <p>Usa los prompts base como una plantilla. El verdadero poder está en ajustarlos a tu cliente, tu voz y la situación específica.</p>
+          </div>
+          <div class="tip-card">
+            <h3>El Contexto es Clave</h3>
+            <p>El campo "Contexto / Cuándo usarlo" es tu mejor aliado. Describe la situación (ej: "Email para cliente moroso") para encontrarlo rápido.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Crea tus Joyas</h3>
+            <p>¿Descubriste un prompt genial? ¡No lo dejes en un bloc de notas! Guárdalo aquí. Esta biblioteca crece contigo.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    
+  </main>
+
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
+  <div id="promptModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-btn close-modal" aria-label="Cerrar">&times;</button>
+      <h2 id="modalTitle">Nuevo Prompt</h2>
+      <form id="promptForm" autocomplete="off">
+        <label for="promptName">Nombre del Prompt</label>
+        <input id="promptName" type="text" required />
+        <label for="promptText">Contenido del Prompt</label>
+        <textarea id="promptText" required placeholder="Escribe el prompt completo aquí..."></textarea>
+        <label for="promptContext">Contexto / Cuándo usarlo</label>
+        <textarea id="promptContext"></textarea>
+        <label for="promptPersonalization">Personalización</label>
+        <textarea id="promptPersonalization" placeholder="Ajustes o adaptaciones específicas..."></textarea>
+        <label for="promptFrequency">Frecuencia</label>
+        <select id="promptFrequency">
+          <option value="diario">Diario</option>
+          <option value="semanal" selected>Semanal</option>
+          <option value="mensual">Mensual</option>
+          <option value="ocasional">Ocasional</option>
+        </select>
+        <div class="modal-actions">
+          <button id="savePrompt" type="submit" class="btn btn-primary">Guardar</button>
+          <button id="deletePrompt" type="button" class="btn btn-danger">🗑️ Eliminar</button>
+          <button id="cancelBtn" type="button" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>
+      Ecosistema Contador 4.0 es un desarrollo de
+      <a href="https://jairoamaya.co" target="_blank" rel="noopener">Jairo Amaya – Full Stack Marketer</a>.
+      <br>Todos los derechos reservados © 2025.
+    </p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
