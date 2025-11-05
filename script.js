@@ -1,5 +1,6 @@
 // Importar los datos
-import promptsData from './promptsData.js';
+// ESTA LÍNEA ES LA CORRECTA:
+import { promptsData } from './promptsData.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
