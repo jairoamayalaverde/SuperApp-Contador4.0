@@ -24,15 +24,13 @@
 </head>
 <body>
 
+  <!-- ========================================= -->
+  <!-- ✅ CAMBIO 1: Header sin botón Google Sheets -->
+  <!-- ========================================= -->
   <header class="site-header">
     <div class="header-inner">
       <div class="header-left">
         <h1 class="site-title">Ecosistema IA – <span>Contador 4.0</span></h1>
-      </div>
-      <div class="header-buttons">
-        <button id="viewSheetBtn" class="btn-secondary" aria-label="Ver o editar en Google Sheets">
-          Ver o editar en Google Sheets
-        </button>
       </div>
     </div>
   </header>
@@ -95,6 +93,9 @@
       </div>
     </section>
 
+    <!-- ========================================= -->
+    <!-- ✅ CAMBIO 2: Botón Google Sheets movido aquí -->
+    <!-- ========================================= -->
     <!-- Vista: Biblioteca Personal -->
     <section id="library-view" class="tab-content" role="tabpanel" aria-labelledby="tab-library">
       <div class="controls">
@@ -107,6 +108,9 @@
           />
         </div>
         <div class="actions-wrap">
+          <button id="viewSheetBtn" class="btn-secondary" type="button" aria-label="Ver o editar en Google Sheets">
+            Ver en Google Sheets
+          </button>
           <button id="addPromptBtn" class="btn-add" type="button">+ Nuevo Prompt</button>
           <button id="exportBtn" class="btn btn-export" type="button">📤 Exportar Excel</button>
         </div>
@@ -191,7 +195,6 @@
   <!-- Toast notification container (para implementar después) -->
   <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- ⚡ CAMBIO IMPORTANTE AQUÍ ⚡ -->
   <script src="promptsData.js"></script>
   <script src="script.js"></script>
 </body>
