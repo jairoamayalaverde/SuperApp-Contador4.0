@@ -37,7 +37,6 @@
       <button id="tab-library" class="tab-btn" role="tab" aria-selected="false" aria-controls="library-view">
         📚 Mi Biblioteca Personal
       </button>
-      
       <button id="tab-dian" class="tab-btn" role="tab" aria-selected="false" aria-controls="dian-view">
         🏛️ Prompts DIAN (30+)
       </button>
@@ -138,90 +137,9 @@
     </section>
 
     <section id="dian-view" class="tab-content" role="tabpanel" aria-labelledby="tab-dian">
-      
-      <div style="text-align: center; margin-bottom: var(--space-xl); padding-top: var(--space-md);">
-          <h1 style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--secondary); font-weight: 700;">
-              Recursos DIAN
-          </h1>
-          <p style="color: var(--text-medium); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-              ¿Te preocupa el cumplimiento fiscal? Aquí tienes 30 prompts estáticos para consultar y copiar.
-          </p>
-      </div>
-
-      <div id="dian-console" style="max-width: 800px; margin: 0 auto var(--space-xl); padding: var(--space-xl); border: 2px solid var(--border-light); border-radius: var(--radius-xl); background: var(--bg-white); box-shadow: var(--shadow-md);">
-          
-          <div id="dian-confirm-box" style="display: none; padding: var(--space-md); background: var(--bg-light); border-left: 5px solid var(--info); border-radius: var(--radius-md); margin-bottom: var(--space-lg);">
-              <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
-                  <input type="checkbox" id="dian-confirmPDF" style="margin-top: 6px; width: 18px; height: 18px;" />
-                  <label for="dian-confirmPDF" style="flex: 1; margin: 0; font-size: 0.95rem; color: var(--secondary);">
-                      <strong style="display: block;">✅ Confirmo que soy usuario del E.book Contador 4.0.</strong>
-                      <span style="color: var(--text-medium); font-size: 0.9rem;">
-                          Al marcar esta casilla, acepto desbloquear los 30 prompts especializados DIAN.
-                      </span>
-                  </label>
-              </div>
-              <button id="dian-generate-prompts-btn" class="btn-primary" style="width: 100%; margin-top: var(--space-md);" disabled>
-                  🚀 Desbloquear Prompts Ahora
-              </button>
-          </div>
-
-          <div id="dian-upload-box" style="border: 3px dashed var(--border-medium); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; background: var(--bg-white);">
-              <h3 style="font-family: var(--font-heading); font-weight: 700; color: var(--secondary); font-size: 1.3rem;">
-                  Desbloquear Recurso
-              </h3>
-              <p style="color: var(--text-light); margin-bottom: var(--space-lg);">
-                  Sube el PDF "Contador 4.0" para validar tu acceso y ver los prompts.
-              </p>
-              <label class="btn-primary" style="cursor: pointer;">
-                  Seleccionar PDF
-                  <input type="file" id="dian-pdf-upload-input" accept=".pdf" style="display: none;" />
-              </label>
-          </div>
-          
-          <div id="dian-file-loaded-box" style="display: none; border: 3px solid var(--success); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; background: #f0fdf4;">
-               <p style="color: var(--success); font-weight: 700; font-size: 1.1rem; margin: 0;" id="dian-file-name-display"></p>
-          </div>
-      </div>
-
-      <div class="controls" id="dian-prompts-controls" style="display: none; background: var(--bg-white); padding: var(--space-md); border-radius: var(--radius-lg);">
-          <div class="search-wrap" style="flex: 1 1 300px;">
-              <select id="dian-category-filter-select" style="width: 100%; padding: 12px 14px; border-radius: var(--radius-md); border: 2px solid var(--border-medium);">
-                  <option value="all">Todas las Categorías</option>
-                  <option value="vencimientos">Vencimientos</option>
-                  <option value="obligaciones">Obligaciones</option>
-                  <option value="procedimientos">Procedimientos</option>
-                  <option value="regimenes">Regímenes</option>
-                  <option value="casos">Casos Prácticos</option>
-                  <option value="herramientas">Herramientas Digitales</option>
-              </select>
-          </div>
-          <div class="actions-wrap">
-              <span id="dian-prompt-count-display" style="color: var(--text-light); font-size: 0.9rem;"></span>
-              <button id="dian-export-prompts-btn" class="btn-export">Exportar</button>
-          </div>
-      </div>
-
-      <div class="prompt-list" id="dian-prompt-list-container" style="margin-top: var(--space-lg)">
-          </div>
-
-      <div class="dian-modal-overlay" id="dian-prompt-modal-overlay"></div>
-      <div class="modal dian-modal" id="dian-prompt-modal">
-          <div class="modal-content">
-              <button class="close-btn" id="dian-modal-close-btn">&times;</button>
-              <h2 id="dian-modal-title"></h2>
-              <label>PROMPT COMPLETO:</label>
-              <textarea id="dian-modal-prompt-text" readOnly style="min-height: 150px;"></textarea>
-              <label>DETALLES:</label>
-              <div id="dian-modal-details" style="background: var(--bg-light); padding: var(--space-md); border-radius: var(--radius-md);">
-                  </div>
-              <div class="modal-actions">
-                  <button id="dian-modal-copy-btn" class="btn-primary">Copiar</button>
-                  <button id="dian-modal-chatgpt-btn" class="btn-primary" style="background: var(--success); border-color: var(--success);">Usar en ChatGPT</button>
-              </div>
-          </div>
-      </div>
-    </section>
-      </main>
+        </section>
+    
+  </main>
 
     <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
   
