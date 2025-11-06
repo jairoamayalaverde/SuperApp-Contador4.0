@@ -1,4 +1,4 @@
-// Contenido para tu NUEVO archivo: dian-prompts-logic.js
+// Contenido para tu NUEVO archivo: dian-prompts-logic.js (VERSIÓN CORREGIDA)
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -10,36 +10,45 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- 1. REFERENCIAS A ELEMENTOS DEL DOM ---
-    // Este script SÓLO se activará si encuentra el ID 'dian-prompts-content-tab'
-   const appContainer = document.getElementById('dian-view');
+    // Este script SÓLO se activará si encuentra el ID 'dian-view'
+    const appContainer = document.getElementById('dian-view');
     if (!appContainer) {
         return; // No es la pestaña de DIAN, no hacer nada.
     }
 
-    // Usamos appContainer.querySelector para buscar SÓLO DENTRO de nuestra pestaña
-    const uploadInput = appContainer.querySelector('#pdf-upload-input');
-    const uploadBox = appContainer.querySelector('#upload-box');
-    const fileLoadedBox = appContainer.querySelector('#file-loaded-box');
-    const fileNameDisplay = appContainer.querySelector('#file-name-display');
-    const confirmBox = appContainer.querySelector('#confirm-box');
-    const confirmCheckbox = appContainer.querySelector('#confirmPDF');
-    const generateBtn = appContainer.querySelector('#generate-prompts-btn');
-    const promptsControls = appContainer.querySelector('#prompts-controls');
-    const categoryFilter = appContainer.querySelector('#category-filter-select');
-    const exportBtn = appContainer.querySelector('#export-prompts-btn');
-    const promptCountDisplay = appContainer.querySelector('#prompt-count-display');
-    const promptListContainer = appContainer.querySelector('#prompt-list-container');
-    const modalOverlay = appContainer.querySelector('#prompt-modal-overlay');
-    const modal = appContainer.querySelector('#prompt-modal');
-    const modalCloseBtn = appContainer.querySelector('#modal-close-btn');
-    const modalTitle = appContainer.querySelector('#modal-title');
-    const modalPromptText = appContainer.querySelector('#modal-prompt-text');
-    const modalDetails = appContainer.querySelector('#modal-details');
-    const modalCopyBtn = appContainer.querySelector('#modal-copy-btn');
-    const modalChatGptBtn = appContainer.querySelector('#modal-chatgpt-btn');
+    // --- Selectores ahora apuntan a IDs ÚNICOS ---
+    const uploadInput = appContainer.querySelector('#dian-pdf-upload-input');
+    const uploadBox = appContainer.querySelector('#dian-upload-box');
+    const fileLoadedBox = appContainer.querySelector('#dian-file-loaded-box');
+    const fileNameDisplay = appContainer.querySelector('#dian-file-name-display');
+    const confirmBox = appContainer.querySelector('#dian-confirm-box');
+    const confirmCheckbox = appContainer.querySelector('#dian-confirmPDF');
+    const generateBtn = appContainer.querySelector('#dian-generate-prompts-btn');
+    const promptsControls = appContainer.querySelector('#dian-prompts-controls');
+    const categoryFilter = appContainer.querySelector('#dian-category-filter-select');
+    const exportBtn = appContainer.querySelector('#dian-export-prompts-btn');
+    const promptCountDisplay = appContainer.querySelector('#dian-prompt-count-display');
+    const promptListContainer = appContainer.querySelector('#dian-prompt-list-container');
+    const modalOverlay = appContainer.querySelector('#dian-prompt-modal-overlay');
+    const modal = appContainer.querySelector('#dian-prompt-modal');
+    const modalCloseBtn = appContainer.querySelector('#dian-modal-close-btn');
+    const modalTitle = appContainer.querySelector('#dian-modal-title');
+    const modalPromptText = appContainer.querySelector('#dian-modal-prompt-text');
+    const modalDetails = appContainer.querySelector('#dian-modal-details');
+    const modalCopyBtn = appContainer.querySelector('#dian-modal-copy-btn');
+    const modalChatGptBtn = appContainer.querySelector('#dian-modal-chatgpt-btn');
+    
+    // --- CORRECCIÓN CLAVE ---
+    // El Toast Container es GLOBAL, lo buscamos en todo el documento.
     const toastContainer = document.getElementById('toast-container');
 
     // --- 2. LÓGICA DE FUNCIONAMIENTO ---
+
+    // Chequeo de seguridad por si algún elemento no se encuentra
+    if (!uploadInput || !generateBtn || !categoryFilter || !exportBtn || !promptListContainer || !modal || !toastContainer) {
+        console.error("Error: Faltan elementos de la UI de DIAN.");
+        return;
+    }
 
     uploadInput.addEventListener('change', (event) => {
         const file = event.target.files[0];
@@ -72,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     categoryFilter.addEventListener('change', () => {
         const selectedCategory = categoryFilter.value;
-        const allPrompts = dianPromptsData;
+        // "dianPromptsData" es la variable global de dian-prompts-data.js
+        const allPrompts = dianPromptsData; 
         
         let filteredPrompts;
         if (selectedCategory === 'all') {
@@ -120,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         prompts.forEach(prompt => {
             const card = document.createElement('div');
-            card.className = 'prompt-card';
+            card.className = 'prompt-card'; // Reutilizamos tu clase de estilos (seguro)
             card.style.cursor = 'pointer';
             card.dataset.promptId = prompt.id; 
 
@@ -173,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p style="margin: 0; font-weight: 700; color: ${getPriorityColor(currentSelectedPrompt.priority)}; text-transform: capitalize;">${currentSelectedPrompt.priority}</p>
             </div>
         `;
-        modal.classList.add('active');
+        modal.classList.add('active'); // Usa la clase 'active' de tu CSS
         modalOverlay.classList.add('active');
     }
 
@@ -193,13 +203,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showToast(message) {
         const toast = document.createElement('div');
-        toast.className = 'toast';
+        toast.className = 'toast'; // Reutiliza tu clase 'toast' global
         toast.textContent = message;
-        // Asumiendo que tu CSS ya tiene #toast-container
+        
         if (toastContainer) {
             toastContainer.appendChild(toast);
         } else {
-            // Fallback por si el toast-container no está en esta pestaña
+            // Fallback por si acaso
             document.body.appendChild(toast);
             toast.style.position = 'fixed';
             toast.style.bottom = '20px';
