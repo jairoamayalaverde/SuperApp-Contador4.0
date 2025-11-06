@@ -649,8 +649,9 @@ export const promptsData = [
         ]
       }
     ]
-  }
-]
+   ]
+}
 ];
 
-export default promptsData;
+// Hacer disponible globalmente
+window.promptsData = promptsData;
