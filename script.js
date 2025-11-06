@@ -7,8 +7,6 @@ const promptsData = window.promptsData || [];
 
 // ===== CONFIGURACIÓN GLOBAL =====
 const CONFIG = {
-```
-
   STORAGE_KEY: 'userPrompts',
   DEBOUNCE_DELAY: 300,
   TOAST_DURATION: 3000,
