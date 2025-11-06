@@ -1,5 +1,5 @@
 // promptsData.js
-const promptsData = [
+window.promptsData = [
   // 1️⃣ ANÁLISIS FINANCIERO ESTRATÉGICO
   {
     title: "📊 Análisis Financiero Estratégico",
@@ -651,7 +651,3 @@ const promptsData = [
     ]
    ]
 }
-];
-
-// Hacer disponible globalmente
-window.promptsData = promptsData;
