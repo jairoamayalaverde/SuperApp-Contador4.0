@@ -123,9 +123,10 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
+/* ✅ CAMBIO: Header centrado sin botones */
 .header-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem 1.5rem;
   max-width: 1200px;
@@ -1026,6 +1027,7 @@ button:disabled {
 }
 
 /* ===== RESPONSIVE ===== */
+/* ✅ CAMBIO: Responsive mejorado sin header-buttons */
 @media (max-width: 768px) {
   :root {
     --space-xl: 24px;
@@ -1034,16 +1036,11 @@ button:disabled {
 
   .header-inner {
     flex-direction: column;
-    gap: var(--space-md);
+    gap: 0;
   }
 
   .site-title {
     text-align: center;
-  }
-
-  .header-buttons {
-    flex-direction: column;
-    width: 100%;
   }
 
   .btn-add,
@@ -1094,6 +1091,7 @@ button:disabled {
   }
 }
 
+/* ✅ CAMBIO: Espacio reducido en móvil */
 @media (max-width: 600px) {
   .app-container {
     margin: var(--space-md) var(--space-sm) var(--space-xl);
@@ -1103,6 +1101,8 @@ button:disabled {
   .controls {
     flex-direction: column;
     align-items: stretch;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
   }
 
   .search-wrap,
@@ -1112,6 +1112,7 @@ button:disabled {
 
   .actions-wrap {
     flex-direction: column;
+    gap: var(--space-sm);
   }
 
   .filter-controls {
