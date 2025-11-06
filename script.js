@@ -2,11 +2,13 @@
 // CONTADOR 4.0 - SCRIPT PRINCIPAL
 // =========================================
 
-// ===== IMPORTACIÓN DE DATOS =====
-import promptsData from './promptsData.js';
+// ===== OBTENER DATOS DESDE WINDOW =====
+const promptsData = window.promptsData || [];
 
 // ===== CONFIGURACIÓN GLOBAL =====
 const CONFIG = {
+```
+
   STORAGE_KEY: 'userPrompts',
   DEBOUNCE_DELAY: 300,
   TOAST_DURATION: 3000,
