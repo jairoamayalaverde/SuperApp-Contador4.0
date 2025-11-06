@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalDetails = appContainer.querySelector('#modal-details');
     const modalCopyBtn = appContainer.querySelector('#modal-copy-btn');
     const modalChatGptBtn = appContainer.querySelector('#modal-chatgpt-btn');
-    const toastContainer = appContainer.querySelector('#toast-container');
+    const toastContainer = document.getElementById('toast-container');
 
     // --- 2. LÓGICA DE FUNCIONAMIENTO ---
 
