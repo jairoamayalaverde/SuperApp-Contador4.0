@@ -649,6 +649,7 @@ window.promptsData = [
         ]
       }
     ]
-   ]
-}
+  }
 ];
+
+window.promptsData = promptsData;
