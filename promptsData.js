@@ -1,5 +1,5 @@
 // promptsData.js
-export const promptsData = [
+const promptsData = [
   // 1️⃣ ANÁLISIS FINANCIERO ESTRATÉGICO
   {
     title: "📊 Análisis Financiero Estratégico",
