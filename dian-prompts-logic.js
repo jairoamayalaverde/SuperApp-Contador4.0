@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. REFERENCIAS A ELEMENTOS DEL DOM ---
     // Este script SÓLO se activará si encuentra el ID 'dian-prompts-content-tab'
-    const appContainer = document.getElementById('dian-prompts-content-tab');
+   const appContainer = document.getElementById('dian-view');
     if (!appContainer) {
         return; // No es la pestaña de DIAN, no hacer nada.
     }
