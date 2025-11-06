@@ -645,80 +645,11 @@ window.promptsData = [
           {
             title: "Reporteo Segmentado y Performance Management Global",
             prompt: `Crea un sistema integral de reporteo por segmentos para grupo multinacional que incluya: definición de segmentos reportables (geográficos [país/región], líneas de negocio, matriz) según IFRS 8, asignación de ingresos, costos y activos a segmentos con metodología consistente, tratamiento de costos corporativos y su allocación/no-allocación a segmentos, métricas de performance diferenciadas por tipo de segmento, análisis de rentabilidad por segmento con ratios específicos, transfer pricing interno entre segmentos para management reporting, comparativos vs. budget y forecast por segmento, análisis de sinergias y duplicidades entre segmentos, benchmarking de segmentos vs. pure players del mercado, análisis de interdependencias entre segmentos, reportes de performance ajustados por items especiales, revelaciones requeridas por segmento en estados financieros, conciliación entre reporte segmentado y consolidado, dashboard ejecutivo de portfolio de negocios, y balanced scorecard por segmento con KPIs financieros y no financieros. Sistema debe soportar decisiones de asignación de capital y recursos entre segmentos basadas en performance real.`
-          }
-        ]
-      }
-    ]
-  },
-
-  // 8️⃣ INJERTO NUEVO: PROMPTS DIAN
-  // (He añadido una coma "," después del objeto anterior)
-  {
-    title: "🏛️ Generador de Prompts DIAN",
-    icon: "🇨🇴",
-    subcategories: [
-      {
-        title: "Vencimientos y Calendario",
-        prompts: [
-          { title: "Calendario Tributario Personas Naturales 2024", prompt: "Genera un calendario tributario completo para personas naturales en Colombia 2024, incluyendo fechas de vencimiento por último dígito del NIT, formularios aplicables y sanciones por extemporaneidad." },
-          { title: "Vencimientos Renta y Complementarios", prompt: "Explica detalladamente los vencimientos para la declaración de renta y complementarios de personas naturales, diferenciando entre empleados, independientes y obligados a llevar contabilidad." },
-          { title: "IVA Bimestral - Fechas y Procedimiento", prompt: "Detalla el calendario de vencimientos del IVA bimestral para personas naturales responsables, incluyendo procedimiento de presentación y pago en línea." },
-          { title: "Retenciones en la Fuente - Vencimientos", prompt: "Explica los vencimientos mensuales para agentes retenedores personas naturales, diferenciando entre grandes contribuyentes y demás responsables." },
-          { title: "Información Exógena - Cronograma", prompt: "Genera el cronograma completo de presentación de información exógena para personas naturales obligadas, incluyendo formatos y medios de presentación." }
-        ]
-      },
-      {
-        title: "Obligaciones Formales",
-        prompts: [
-          { title: "Obligaciones Formales Personas Naturales", prompt: "Lista y explica todas las obligaciones formales de las personas naturales ante la DIAN, diferenciando por régimen tributario y nivel de ingresos." },
-          { title: "RUT - Registro Único Tributario", prompt: "Explica el proceso completo de inscripción, actualización y cancelación del RUT para personas naturales, incluyendo documentos requeridos y procedimientos." },
-          { title: "Facturación Electrónica ObligatorIA", prompt: "Detalla las obligaciones de facturación electrónica para personas naturales, umbrales de facturación, habilitación y contingencias." },
-          { title: "Libros de Contabilidad", prompt: "Explica qué personas naturales están obligadas a llevar contabilidad, qué libros deben llevar y los procedimientos de registro ante la DIAN." },
-          { title: "Régimen Simple de Tributación - SIMPLE", prompt: "Detalla las obligaciones específicas de las personas naturales acogidas al Régimen SIMPLE, incluyendo límites, beneficios y procedimientos." }
-        ]
-      },
-      {
-        title: "Procedimientos DIAN",
-        prompts: [
-          { title: "Proceso Sancionatorio DIAN", prompt: "Explica el proceso sancionatorio de la DIAN para personas naturales, desde la investigación hasta la imposición de sanciones y recursos disponibles." },
-          { title: "Devoluciones y Compensaciones", prompt: "Detalla el procedimiento para solicitar devoluciones y compensaciones tributarias, plazos, documentos requeridos y seguimiento del proceso." },
-          { title: "Fiscalización Tributaria", prompt: "Explica los procesos de fiscalización de la DIAN, derechos y deberes del contribuyente, y cómo responder a requerimientos oficiales." },
-          { title: "Acuerdos de Pago", prompt: "Detalla el procedimiento para solicitar facilidades de pago ante la DIAN, requisitos, garantías y consecuencias del incumplimiento." },
-          { title: "Recursos y Reclamaciones", prompt: "Explica los recursos disponibles contra actos administrativos de la DIAN, plazos para interponerlos y procedimientos ante el Tribunal Administrativo." }
-        ]
-      },
-      {
-        title: "Regímenes Tributarios",
-        prompts: [
-          { title: "Grandes Contribuyentes", prompt: "Explica las obligaciones especiales de las personas naturales clasificadas como grandes contribuyentes, diferencias con el régimen ordinario." },
-          { title: "Autorretenedores", prompt: "Detalla el régimen de autorretención para personas naturales, procedimientos, tarifas y obligaciones de información." },
-          { title: "Régimen de Insolvencia", prompt: "Explica las implicaciones tributarias de los procesos de insolvencia de personas naturales y las obligaciones ante la DIAN." },
-          { title: "Personas Naturales del Exterior", prompt: "Detalla las obligaciones tributarias de personas naturales extranjeras con ingresos en Colombia y residentes fiscales." },
-          { title: "Régimen Tributario Especial", prompt: "Explica cuándo una persona natural puede acceder al Régimen Tributario Especial y sus implicaciones fiscales." }
-        ]
-      },
-      {
-        title: "Casos Prácticos",
-        prompts: [
-          { title: "Declaración Renta Empleados", prompt: "Desarrolla un caso práctico completo de declaración de renta para una persona natural empleada, incluyendo cálculos y deducciones." },
-          { title: "Declaración Renta Independientes", prompt: "Presenta un caso práctico de declaración de renta para persona natural independiente con múltiples fuentes de ingreso." },
-          { title: "Corrección de Declaraciones", prompt: "Explica el procedimiento para corregir declaraciones tributarias, diferenciando entre correcciones que aumentan o disminuyen el impuesto." },
-          { title: "Cambios Normativos 2024", prompt: "Resume los principales cambios normativos tributarios para personas naturales vigentes en 2024 y su impacto práctico." },
-          { title: "Conciliación Fiscal vs Contable", prompt: "Explica las principales diferencias entre utilidad contable y renta fiscal para personas naturales obligadas a llevar contabilidad." }
-        ]
-      },
-      {
-        title: "Herramientas Digitales DIAN",
-        prompts: [
-          { title: "Portal Tributario DIAN", prompt: "Guía completa para el uso del portal tributario de la DIAN, servicios disponibles, autenticación y resolución de problemas técnicos." },
-          { title: "Aplicativo de Ayuda Renta", prompt: "Explica el uso del aplicativo de ayuda para la declaración de renta de la DIAN, importación de información y validaciones automáticas." },
-          { title: "Facturador Gratuito DIAN", prompt: "Detalla el uso del facturador electrónico gratuito de la DIAN, configuración, emisión de facturas y reportes." },
-          { title: "Servicios Informáticos Tributarios", prompt: "Explica los servicios informáticos disponibles para personas naturales: pre-validadores, servicios web, aplicaciones móviles." },
-          { title: "Mesa de Ayuda Virtual", prompt: "Guía para el uso efectivo de la mesa de ayuda virtual de la DIAN, chat bot, consultas frecuentes y escalamiento a funcionarios." }
+    }
         ]
       }
     ]
   }
-];
+]; // <-- Fíjate: termina con UNA SOLA '}' y luego '];'
 
 window.promptsData = promptsData;
