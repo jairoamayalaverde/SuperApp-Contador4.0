@@ -3,625 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HUB Contador 4.0 - Biblioteca y Asistente</title>
+  <meta name="description" content="Ecosistema IA Contador 4.0 - Biblioteca y Asistente de prompts profesionales para contadores. Genera y gestiona prompts inteligentes.">
+  <meta name="keywords" content="prompts, contador, contabilidad, IA, inteligencia artificial, Claude, ChatGPT">
+  <meta name="author" content="Jairo Amaya">
+  <meta name="theme-color" content="#E86C2A">
+  
+  <title>HUB Contador 4.0 - Biblioteca y Asistente IA</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="Favicon-app.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="Favicon-app.png" />
+  
+  <!-- Preconnect para optimizar carga de fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
   
-  <style>
-:root {
-  --primary: #E86C2A;
-  --primary-dark: #cf5d22;
-  --secondary: #0A2342;
-  --bg-light: #F8F9FA;
-  --bg-white: #ffffff;
-  --bg-code: #f9fafb;
-  --border-light: #E0E0E0;
-  --border-medium: #d1d5db;
-  --text-dark: #111827;
-  --text-medium: #374151;
-  --text-light: #6b7280;
-  --danger: #dc2626;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-}
-
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body {
-  font-family: "Lato", sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  -webkit-font-smoothing: antialiased;
-}
-
-.site-header {
-  background: var(--bg-white);
-  border-bottom: 1px solid var(--border-light);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--shadow-sm);
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header-left { display: flex; align-items: center; gap: 10px; }
-.site-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  color: var(--secondary);
-  font-size: 1.4rem;
-  margin: 0;
-}
-.site-title span { color: var(--primary); }
-.header-buttons { display: flex; gap: 10px; }
-
-.btn, .btn-add, .btn-secondary, .btn-primary, .btn-danger, .btn-export {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  padding: 10px 18px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.btn-add, .btn-primary {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-add:hover, .btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-}
-
-.btn-secondary {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-danger {
-  background: var(--danger);
-  color: white;
-}
-
-.btn-export {
-  background: var(--bg-white);
-  border: 2px solid var(--border-medium);
-  color: var(--text-medium);
-}
-
-.tab-navigation {
-  display: flex;
-  gap: 8px;
-  border-bottom: 2px solid var(--border-light);
-  margin-bottom: 24px;
-  background: var(--bg-white);
-  padding: 0 20px;
-  border-radius: 12px 12px 0 0;
-}
-
-.tab-btn {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 16px 24px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: var(--text-light);
-  border-bottom: 3px solid transparent;
-  transition: all 0.3s ease;
-  margin-bottom: -2px;
-}
-
-.tab-btn:hover {
-  color: var(--secondary);
-  background: var(--bg-light);
-}
-
-.tab-btn.active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-}
-
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-.app-container {
-  max-width: 1100px;
-  margin: 24px auto;
-  padding: 0 18px 36px;
-}
-
-#contador4-pro-console {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px;
-  border: 2px solid var(--border-light);
-  border-radius: 16px;
-  background: var(--bg-white);
-  box-shadow: var(--shadow-md);
-}
-
-#contador4-pro-console h3 {
-  text-align: center;
-  margin: 0 0 24px 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  color: var(--secondary);
-  padding-bottom: 20px;
-  border-bottom: 2px solid var(--border-light);
-}
-
-#contador4-pro-console label {
-  display: block;
-  font-weight: 700;
-  margin: 16px 0 8px 0;
-  color: var(--secondary);
-}
-
-#contador4-pro-console input, #contador4-pro-console select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 2px solid var(--border-medium);
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-#prompt-template-preview {
-  width: 100%;
-  min-height: 120px;
-  max-height: 280px;
-  padding: 16px;
-  border-radius: 10px;
-  border: 2px solid var(--border-light);
-  margin-bottom: 16px;
-  background: var(--bg-code);
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  color: var(--text-medium);
-  overflow-y: auto;
-  white-space: pre-wrap;
-  line-height: 1.6;
-}
-
-#prompt-template-preview .bracket-content {
-  font-weight: 700;
-  color: var(--primary);
-  background: #fff5f0;
-  padding: 3px 6px;
-  border-radius: 4px;
-  border: 1px solid var(--primary);
-}
-
-.tip-box {
-  background: #fef3c7;
-  border-left: 4px solid #f59e0b;
-  padding: 14px 18px;
-  margin: 16px 0;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: #92400e;
-}
-
-#dynamic-inputs-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 20px 0;
-  padding-top: 20px;
-  border-top: 2px dashed var(--border-medium);
-}
-
-.dynamic-input-group label {
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-#generate-pro {
-  width: 100%;
-  padding: 14px;
-  background: var(--secondary);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 20px 0 16px;
-  cursor: pointer;
-}
-
-#generate-pro:hover {
-  background: #1e3a5f;
-  transform: translateY(-2px);
-}
-
-#copy-pro {
-  width: 100%;
-  padding: 12px;
-  background: #eff6ff;
-  color: #1e40af;
-  border: 2px solid #bfdbfe;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-#execution-btn-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.exec-btn {
-  padding: 12px;
-  background: var(--secondary);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-#output-console {
-  min-height: 120px;
-  border-radius: 12px;
-  background: var(--bg-code);
-  border: 2px solid var(--border-light);
-  margin-bottom: 16px;
-}
-
-#output-console .output-error {
-  padding: 16px;
-  color: var(--danger);
-  font-weight: 700;
-  background: #fee2e2;
-}
-
-#output-console .output-section {
-  padding: 20px;
-  white-space: pre-wrap;
-}
-
-#output-console .output-title {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--secondary);
-}
-
-#output-console .output-content {
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  color: var(--text-medium);
-  line-height: 1.7;
-  background: white;
-  padding: 16px;
-  border-radius: 8px;
-}
-
-.controls {
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.search-wrap { flex: 1 1 420px; }
-#searchInput {
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 10px;
-  border: 2px solid var(--border-medium);
-  font-size: 1rem;
-}
-
-.actions-wrap { display: flex; gap: 10px; }
-
-.filter-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--border-light);
-}
-
-.filter-btn {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: 2px solid var(--border-medium);
-  background: var(--bg-white);
-  color: var(--text-medium);
-  cursor: pointer;
-}
-
-.filter-btn.active {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-
-.prompt-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.prompt-empty-message {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 48px;
-  color: var(--text-light);
-  background: var(--bg-white);
-  border-radius: 12px;
-  border: 2px dashed var(--border-medium);
-}
-
-.prompt-card {
-  background: var(--bg-white);
-  border: 2px solid var(--border-light);
-  border-radius: 12px;
-  padding: 20px;
-  transition: all 0.3s ease;
-}
-
-.prompt-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.prompt-card.fixed-prompt { border-left: 5px solid var(--primary); }
-
-.prompt-categoria {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.prompt-titulo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 8px 0;
-  color: var(--secondary);
-}
-
-.prompt-subcategoria {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-}
-
-.prompt-contenido {
-  background: var(--bg-code);
-  padding: 14px;
-  border-radius: 8px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  color: var(--text-medium);
-  margin-bottom: 16px;
-}
-
-.prompt-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.btn-action {
-  padding: 10px 16px;
-  border: 2px solid var(--border-medium);
-  border-radius: 8px;
-  background: var(--bg-white);
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.btn-action.primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-color: #667eea;
-}
-
-.btn-action.danger {
-  color: var(--danger);
-  border-color: #fecaca;
-  background: #fef2f2;
-}
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 35, 66, 0.6);
-  display: none;
-  z-index: 1190;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  width: 92%;
-  max-width: 760px;
-  max-height: 90vh;
-  background: var(--bg-white);
-  border-radius: 16px;
-  box-shadow: 0 24px 48px rgba(10, 35, 66, 0.3);
-  overflow: hidden;
-  display: none;
-  z-index: 1200;
-  opacity: 0;
-}
-
-.modal.active {
-  display: block;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.modal-overlay.active { display: block; opacity: 1; }
-
-.modal-content {
-  padding: 32px;
-  max-height: 90vh;
-  overflow: auto;
-}
-
-.close-btn {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  border: none;
-  background: var(--bg-light);
-  font-size: 28px;
-  cursor: pointer;
-  color: var(--text-medium);
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-
-.modal-content h2 {
-  margin: 0 0 24px 0;
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  color: var(--secondary);
-  font-size: 1.8rem;
-}
-
-.modal-content label {
-  display: block;
-  margin-top: 20px;
-  color: var(--secondary);
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.modal-content input, .modal-content textarea, .modal-content select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 2px solid var(--border-medium);
-  font-size: 1rem;
-}
-
-.modal-content textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.modal-content input:disabled, .modal-content textarea:disabled, .modal-content select:disabled {
-  background: var(--bg-light);
-  color: var(--text-light);
-  cursor: not-allowed;
-}
-
-.modal-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-  margin-top: 32px;
-  flex-wrap: wrap;
-  border-top: 2px solid var(--border-light);
-  padding-top: 24px;
-}
-
-.tips-section {
-  margin-top: 56px;
-  padding-top: 40px;
-  border-top: 2px solid var(--border-light);
-}
-
-.tips-section h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--secondary);
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.tip-card {
-  background: var(--bg-white);
-  border-radius: 12px;
-  padding: 24px;
-  border: 2px solid var(--border-light);
-  border-left: 5px solid var(--primary);
-}
-
-.tip-card h3 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  color: var(--primary);
-  margin: 0 0 12px 0;
-}
-
-.tip-card p {
-  line-height: 1.7;
-  color: var(--text-medium);
-  margin: 0;
-}
-
-.app-footer {
-  margin: 56px auto 24px;
-  padding: 32px 16px;
-  background: var(--bg-white);
-  border-top: 2px solid var(--border-light);
-  text-align: center;
-  color: var(--text-light);
-}
-
-.app-footer a {
-  color: var(--primary);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-@media (max-width: 768px) {
-  .header-inner { flex-direction: column; gap: 12px; }
-  .tab-btn { font-size: 0.85rem; padding: 12px 16px; }
-  #execution-btn-container { grid-template-columns: 1fr; }
-  .prompt-list { grid-template-columns: 1fr; }
-}
-  </style>
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -631,103 +30,147 @@ body {
         <h1 class="site-title">Ecosistema IA – <span>Contador 4.0</span></h1>
       </div>
       <div class="header-buttons">
-        <button id="viewSheetBtn" class="btn-secondary">Ver o editar en Google Sheets</button>
+        <button id="viewSheetBtn" class="btn-secondary" aria-label="Ver o editar en Google Sheets">
+          Ver o editar en Google Sheets
+        </button>
       </div>
     </div>
   </header>
 
   <main class="app-container">
-    <nav class="tab-navigation">
-      <button id="tab-generator" class="tab-btn active">🚀 Generador Express (115+ Prompts)</button>
-      <button id="tab-library" class="tab-btn">📚 Mi Biblioteca Personal</button>
+    <!-- Navegación de pestañas -->
+    <nav class="tab-navigation" role="tablist" aria-label="Navegación principal">
+      <button id="tab-generator" class="tab-btn active" role="tab" aria-selected="true" aria-controls="assistant-view">
+        🚀 Generador Express (115+ Prompts)
+      </button>
+      <button id="tab-library" class="tab-btn" role="tab" aria-selected="false" aria-controls="library-view">
+        📚 Mi Biblioteca Personal
+      </button>
     </nav>
 
-    <section id="assistant-view" class="tab-content active">
+    <!-- Vista: Asistente/Generador -->
+    <section id="assistant-view" class="tab-content active" role="tabpanel" aria-labelledby="tab-generator">
       <div id="contador4-pro-console">
-        <h3>🚀 Asistente Contador 4.0</h3>
+        <div class="console-header">
+          <h3>🚀 Asistente Contador 4.0</h3>
+        </div>
+        
         <label for="cat-pro">Categoría</label>
-        <select id="cat-pro"><option value="">Selecciona...</option></select>
+        <select id="cat-pro" aria-label="Seleccionar categoría">
+          <option value="">Selecciona una categoría...</option>
+        </select>
+        
         <label for="subcat-pro">Subcategoría</label>
-        <select id="subcat-pro"><option value="">Selecciona...</option></select>
+        <select id="subcat-pro" aria-label="Seleccionar subcategoría">
+          <option value="">Selecciona una subcategoría...</option>
+        </select>
+        
         <label for="task-pro">Prompt</label>
-        <select id="task-pro"><option value="">Selecciona...</option></select>
+        <select id="task-pro" aria-label="Seleccionar prompt">
+          <option value="">Selecciona un prompt...</option>
+        </select>
+        
         <label for="prompt-template-preview">Plantilla del Prompt</label>
-        <div id="prompt-template-preview">Selecciona una tarea para ver la plantilla...</div>
-        <div class="tip-box">💡 <strong>Tip:</strong> Rellena los campos que aparecen abajo para personalizar tu prompt.</div>
+        <div id="prompt-template-preview" role="region" aria-live="polite">
+          Selecciona una tarea para ver la plantilla...
+        </div>
+        
+        <div class="tip-box" role="note">
+          💡 <strong>Tip:</strong> Rellena los campos que aparecen abajo para personalizar tu prompt.
+        </div>
+        
         <div id="dynamic-inputs-container"></div>
-        <button id="generate-pro">Generar Prompt</button>
-        <div id="output-console"></div>
-        <button id="copy-pro" style="display: none;">Copiar Prompt</button>
+        
+        <button id="generate-pro" type="button">Generar Prompt</button>
+        
+        <div id="output-console" role="region" aria-live="polite"></div>
+        
+        <button id="copy-pro" type="button" style="display: none;">Copiar Prompt</button>
+        
         <div id="execution-btn-container" style="display: none;">
-          <button id="exec-claude" class="exec-btn">🤓 Ejecutar en Claude</button>
-          <button id="exec-chatgpt" class="exec-btn">💬 Ejecutar en ChatGPT</button>
-          <button id="exec-gemini" class="exec-btn">✨ Ejecutar en Gemini</button>
+          <button id="exec-claude" class="exec-btn" type="button">🤓 Ejecutar en Claude</button>
+          <button id="exec-chatgpt" class="exec-btn" type="button">💬 Ejecutar en ChatGPT</button>
+          <button id="exec-gemini" class="exec-btn" type="button">✨ Ejecutar en Gemini</button>
         </div>
       </div>
     </section>
 
-    <section id="library-view" class="tab-content">
-      <section class="controls">
+    <!-- Vista: Biblioteca Personal -->
+    <section id="library-view" class="tab-content" role="tabpanel" aria-labelledby="tab-library">
+      <div class="controls">
         <div class="search-wrap">
-          <input id="searchInput" type="search" placeholder="Buscar en Mi Biblioteca..." />
+          <input 
+            id="searchInput" 
+            type="search" 
+            placeholder="Buscar en Mi Biblioteca..." 
+            aria-label="Buscar prompts"
+          />
         </div>
         <div class="actions-wrap">
-          <button id="addPromptBtn" class="btn-add">+ Nuevo Prompt</button>
-          <button id="exportBtn" class="btn btn-export">📤 Exportar Excel</button>
+          <button id="addPromptBtn" class="btn-add" type="button">+ Nuevo Prompt</button>
+          <button id="exportBtn" class="btn btn-export" type="button">📤 Exportar Excel</button>
         </div>
-      </section>
+      </div>
 
-      <nav id="filterControls" class="filter-controls">
-        <button class="filter-btn active" data-filter="todos">Todos</button>
-        <button class="filter-btn" data-filter="diario">Diario</button>
-        <button class="filter-btn" data-filter="semanal">Semanal</button>
-        <button class="filter-btn" data-filter="mensual">Mensual</button>
-        <button class="filter-btn" data-filter="ocasional">Ocasional</button>
+      <nav id="filterControls" class="filter-controls" role="navigation" aria-label="Filtros de frecuencia">
+        <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
+        <button class="filter-btn" data-filter="diario" type="button">Diario</button>
+        <button class="filter-btn" data-filter="semanal" type="button">Semanal</button>
+        <button class="filter-btn" data-filter="mensual" type="button">Mensual</button>
+        <button class="filter-btn" data-filter="ocasional" type="button">Ocasional</button>
       </nav>
 
-      <section id="promptList" class="prompt-list"></section>
+      <section id="promptList" class="prompt-list" aria-live="polite" aria-label="Lista de prompts"></section>
 
       <section class="tips-section">
         <h2>Consejos para tu Biblioteca</h2>
         <div class="tips-grid">
-          <div class="tip-card">
+          <article class="tip-card">
             <h3>Personaliza Siempre</h3>
             <p>Usa los prompts base como una plantilla. El verdadero poder está en ajustarlos a tu cliente, tu voz y la situación específica.</p>
-          </div>
-          <div class="tip-card">
+          </article>
+          <article class="tip-card">
             <h3>El Contexto es Clave</h3>
-            <p>El campo "Contexto / Cuándo usarlo" es tu mejor aliado. Describe la situación para encontrarlo rápido.</p>
-          </div>
-          <div class="tip-card">
+            <p>El campo "Contexto / Cuándo usarlo" es tu mejor aliado. Describe la situación (ej: "Email para cliente moroso") para encontrarlo rápido.</p>
+          </article>
+          <article class="tip-card">
             <h3>Crea tus Joyas</h3>
             <p>¿Descubriste un prompt genial? ¡No lo dejes en un bloc de notas! Guárdalo aquí. Esta biblioteca crece contigo.</p>
-          </div>
+          </article>
         </div>
       </section>
     </section>
   </main>
 
-  <div id="modalOverlay" class="modal-overlay"></div>
-  <div id="promptModal" class="modal">
+  <!-- Modal Overlay -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
+  
+  <!-- Modal -->
+  <div id="promptModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
-      <button class="close-btn">&times;</button>
+      <button class="close-btn close-modal" aria-label="Cerrar modal">&times;</button>
       <h2 id="modalTitle">Nuevo Prompt</h2>
-      <form id="promptForm">
-        <label>Nombre del Prompt</label>
-        <input id="promptName" type="text" required />
-        <label>Contenido del Prompt</label>
-        <textarea id="promptText" required></textarea>
-        <label>Contexto / Cuándo usarlo</label>
-        <textarea id="promptContext"></textarea>
-        <label>Personalización</label>
-        <textarea id="promptPersonalization"></textarea>
-        <label>Frecuencia</label>
+      <form id="promptForm" autocomplete="off">
+        <label for="promptName">Nombre del Prompt</label>
+        <input id="promptName" type="text" required aria-required="true" />
+        
+        <label for="promptText">Contenido del Prompt</label>
+        <textarea id="promptText" required aria-required="true" placeholder="Escribe el prompt completo aquí..."></textarea>
+        
+        <label for="promptContext">Contexto / Cuándo usarlo</label>
+        <textarea id="promptContext" placeholder="Describe cuándo usar este prompt..."></textarea>
+        
+        <label for="promptPersonalization">Personalización</label>
+        <textarea id="promptPersonalization" placeholder="Ajustes o adaptaciones específicas..."></textarea>
+        
+        <label for="promptFrequency">Frecuencia</label>
         <select id="promptFrequency">
           <option value="diario">Diario</option>
           <option value="semanal" selected>Semanal</option>
           <option value="mensual">Mensual</option>
           <option value="ocasional">Ocasional</option>
         </select>
+        
         <div class="modal-actions">
           <button id="savePrompt" type="submit" class="btn btn-primary">Guardar</button>
           <button id="deletePrompt" type="button" class="btn btn-danger">🗑️ Eliminar</button>
@@ -738,11 +181,17 @@ body {
   </div>
 
   <footer class="app-footer">
-    <p>Ecosistema Contador 4.0 es un desarrollo de <a href="https://jairoamaya.co" target="_blank">Jairo Amaya – Full Stack Marketer</a>. Todos los derechos reservados © 2025.</p>
+    <p>
+      Ecosistema Contador 4.0 es un desarrollo de
+      <a href="https://jairoamaya.co" target="_blank" rel="noopener noreferrer">Jairo Amaya – Full Stack Marketer</a>.
+      <br>Todos los derechos reservados © 2025.
+    </p>
   </footer>
 
-  <script>
-// Continúa en el siguiente mensaje por límite de caracteres...
-  </script>
+  <!-- Toast notification container (para implementar después) -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- JavaScript como módulo -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
