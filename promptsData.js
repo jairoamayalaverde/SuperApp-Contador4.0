@@ -651,3 +651,6 @@ export const promptsData = [
     ]
   }
 ]
+];
+
+export default promptsData;
