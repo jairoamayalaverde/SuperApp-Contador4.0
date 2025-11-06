@@ -10,14 +10,17 @@
   
   <title>HUB Contador 4.0 - Biblioteca y Asistente IA</title>
 
-    <link rel="icon" href="Favicon-app.png" sizes="32x32" type="image/png" />
+  <!-- Favicon -->
+  <link rel="icon" href="Favicon-app.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="Favicon-app.png" />
   
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Preconnect para optimizar carga de fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
   
-    <link rel="stylesheet" href="styles.css">
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -27,12 +30,16 @@
         <h1 class="site-title">Ecosistema IA – <span>Contador 4.0</span></h1>
       </div>
       <div class="header-buttons">
-              </div>
+        <button id="viewSheetBtn" class="btn-secondary" aria-label="Ver o editar en Google Sheets">
+          Ver o editar en Google Sheets
+        </button>
+      </div>
     </div>
   </header>
 
   <main class="app-container">
-        <nav class="tab-navigation" role="tablist" aria-label="Navegación principal">
+    <!-- Navegación de pestañas -->
+    <nav class="tab-navigation" role="tablist" aria-label="Navegación principal">
       <button id="tab-generator" class="tab-btn active" role="tab" aria-selected="true" aria-controls="assistant-view">
         🚀 Generador Express (115+ Prompts)
       </button>
@@ -41,7 +48,8 @@
       </button>
     </nav>
 
-        <section id="assistant-view" class="tab-content active" role="tabpanel" aria-labelledby="tab-generator">
+    <!-- Vista: Asistente/Generador -->
+    <section id="assistant-view" class="tab-content active" role="tabpanel" aria-labelledby="tab-generator">
       <div id="contador4-pro-console">
         <div class="console-header">
           <h3>🚀 Asistente Contador 4.0</h3>
@@ -87,7 +95,8 @@
       </div>
     </section>
 
-        <section id="library-view" class="tab-content" role="tabpanel" aria-labelledby="tab-library">
+    <!-- Vista: Biblioteca Personal -->
+    <section id="library-view" class="tab-content" role="tabpanel" aria-labelledby="tab-library">
       <div class="controls">
         <div class="search-wrap">
           <input 
@@ -100,9 +109,6 @@
         <div class="actions-wrap">
           <button id="addPromptBtn" class="btn-add" type="button">+ Nuevo Prompt</button>
           <button id="exportBtn" class="btn btn-export" type="button">📤 Exportar Excel</button>
-                    <button id="viewSheetBtn" class="btn-secondary" aria-label="Ver o editar en Google Sheets">
-            Ver o editar en Google Sheets
-          </button>
         </div>
       </div>
 
@@ -136,9 +142,11 @@
     </section>
   </main>
 
-    <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
+  <!-- Modal Overlay -->
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true"></div>
   
-    <div id="promptModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <!-- Modal -->
+  <div id="promptModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <button class="close-btn close-modal" aria-label="Cerrar modal">&times;</button>
       <h2 id="modalTitle">Nuevo Prompt</h2>
@@ -153,12 +161,12 @@
         <textarea id="promptContext" placeholder="Describe cuándo usar este prompt..."></textarea>
         
         <label for="promptPersonalization">Personalización</label>
-        <textarea id="promptPersonalization" placeholder="Ajustes o adaptaciones específicas..."></textarea>
+        <textarea id="promptPersonalization" placeholder="Ajustes o adaptaciones específicas..."></textarea>
         
         <label for="promptFrequency">Frecuencia</label>
         <select id="promptFrequency">
           <option value="diario">Diario</option>
-          <option value="semanal" selected>Semanal</option>
+          <option value="semanal" selected>Semanal</option>
           <option value="mensual">Mensual</option>
           <option value="ocasional">Ocasional</option>
         </select>
@@ -180,9 +188,11 @@
     </p>
   </footer>
 
-    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <!-- Toast notification container (para implementar después) -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
 
-    <script src="promptsData.js"></script>
+  <!-- ⚡ CAMBIO IMPORTANTE AQUÍ ⚡ -->
+  <script src="promptsData.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
